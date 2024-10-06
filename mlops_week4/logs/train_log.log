@@ -1,0 +1,114 @@
+2024-10-06 06:48:26.631 | INFO     | utils.logging_utils:wrapper:17 - Starting train_and_save
+2024-10-06 06:48:26.635 | ERROR    | utils.logging_utils:wrapper:23 - Error in train_and_save: unknown url type: '/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip'
+Traceback (most recent call last):
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 72, in <module>
+    main(args)
+    │    └ Namespace(data='data', logs='logs', ckpt_path='model_storage')
+    └ <function main at 0x7457b6d9d3a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 64, in main
+    train_and_save(data_module, model, trainer)
+    │              │            │      └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7457b6d43500>
+    │              │            └ TimmClassifier(
+    │              │                (model): ResNet(
+    │              │                  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │              │              ...
+    │              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7457b6d82870>
+    └ <function train_and_save at 0x7457deea6a20>
+
+> File "/workspaces/mlops/mlops_week4/src/utils/logging_utils.py", line 19, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7457b6d82870>, TimmClassifier(
+             │         (model): ResNet(
+             │           (...
+             └ <function train_and_save at 0x7457df16e2a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 15, in train_and_save
+    trainer.fit(model, data_module)
+    │       │   │      └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7457b6d82870>
+    │       │   └ TimmClassifier(
+    │       │       (model): ResNet(
+    │       │         (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │       │     ...
+    │       └ <function Trainer.fit at 0x7457b89b3420>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7457b6d43500>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+    │    └ <function _call_and_handle_interrupt at 0x7457b8abc720>
+    └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           │           │       └ {}
+           │           └ (TimmClassifier(
+           │               (model): ResNet(
+           │                 (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)...
+           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x7457b6d43500>>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+    │    │    │                └ None
+    │    │    └ TimmClassifier(
+    │    │        (model): ResNet(
+    │    │          (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │    │      ...
+    │    └ <function Trainer._run at 0x7457b89b3920>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7457b6d43500>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 942, in _run
+    self._data_connector.prepare_data()
+    │    │               └ <function _DataConnector.prepare_data at 0x7457b8b25440>
+    │    └ <lightning.pytorch.trainer.connectors.data_connector._DataConnector object at 0x7457b6bf8890>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7457b6d43500>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 94, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+    │    │                               └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7457b6d43500>
+    │    └ <function _call_lightning_datamodule_hook at 0x7457b8abc9a0>
+    └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           │   │       └ {}
+           │   └ ()
+           └ <bound method DogBreedImageDataModule.prepare_data of <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x74...
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 21, in prepare_data
+    download_and_extract_archive(
+    └ <function download_and_extract_archive at 0x7457bcc3bc40>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/utils.py", line 395, in download_and_extract_archive
+    download_url(url, download_root, filename, md5)
+    │            │    │              │         └ None
+    │            │    │              └ 'dataset.zip'
+    │            │    └ '/workspaces/mlops/mlops_week4/data'
+    │            └ '/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip'
+    └ <function download_url at 0x7457bcc3b600>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/utils.py", line 122, in download_url
+    url = _get_redirect_url(url, max_hops=max_redirect_hops)
+          │                 │             └ 3
+          │                 └ '/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip'
+          └ <function _get_redirect_url at 0x7457bcc3b4c0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/utils.py", line 66, in _get_redirect_url
+    with urllib.request.urlopen(urllib.request.Request(url, headers=headers)) as response:
+         │      │       │       │      │       │       │            └ {'Method': 'HEAD', 'User-Agent': 'pytorch/vision'}
+         │      │       │       │      │       │       └ '/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip'
+         │      │       │       │      │       └ <class 'urllib.request.Request'>
+         │      │       │       │      └ <module 'urllib.request' from '/usr/local/python/3.12.1/lib/python3.12/urllib/request.py'>
+         │      │       │       └ <module 'urllib' from '/usr/local/python/3.12.1/lib/python3.12/urllib/__init__.py'>
+         │      │       └ <function urlopen at 0x7457bebebe20>
+         │      └ <module 'urllib.request' from '/usr/local/python/3.12.1/lib/python3.12/urllib/request.py'>
+         └ <module 'urllib' from '/usr/local/python/3.12.1/lib/python3.12/urllib/__init__.py'>
+  File "/usr/local/python/3.12.1/lib/python3.12/urllib/request.py", line 318, in __init__
+    self.full_url = url
+    │    │          └ '/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip'
+    │    └ <property object at 0x7457bebd7c40>
+    └ <urllib.request.Request object at 0x7457b6bf8710>
+  File "/usr/local/python/3.12.1/lib/python3.12/urllib/request.py", line 344, in full_url
+    self._parse()
+    │    └ <function Request._parse at 0x7457bec52660>
+    └ <urllib.request.Request object at 0x7457b6bf8710>
+  File "/usr/local/python/3.12.1/lib/python3.12/urllib/request.py", line 373, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+                                              │    └ <property object at 0x7457bebd7c40>
+                                              └ <urllib.request.Request object at 0x7457b6bf8710>
+
+ValueError: unknown url type: '/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip'
