@@ -10,7 +10,7 @@ class TimmClassifier(L.LightningModule):
     def __init__(
         self,
         base_model: str = "resnet18",
-        num_classes: int = 2,
+        num_classes: int = 10,
         pretrained: bool = True,
         lr: float = 1e-3,
         weight_decay: float = 1e-5,

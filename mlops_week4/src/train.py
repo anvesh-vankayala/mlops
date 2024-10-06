@@ -44,7 +44,7 @@ def main(args):
         dirpath=ckpt_path,
         filename="{epoch}-checkpoint",
         save_top_k=3,
-        monitor="val_loss",
+        monitor="val/loss",
         mode="min",
     )
 
