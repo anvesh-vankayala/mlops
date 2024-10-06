@@ -9,7 +9,7 @@ from torchvision import transforms
 import os
 import random
 
-from models.dogbreed_classifer import DogBreedClassifier
+from models.timm_classifier import TimmClassifier
 from utils.logging_utils import setup_logger, task_wrapper, get_rich_progress
 
 @task_wrapper
@@ -67,7 +67,7 @@ def fetch_random_images(root_folder):
 
 @task_wrapper
 def main(args):
-    model = DogBreedClassifier.load_from_checkpoint(args.ckpt_path)
+    model = TimmClassifier.load_from_checkpoint(args.ckpt_path)
     model.eval()
 
     input_folder = Path(args.input_folder)

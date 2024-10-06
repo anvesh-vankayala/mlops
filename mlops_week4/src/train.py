@@ -6,8 +6,8 @@ import lightning as L
 from lightning.pytorch.callbacks import ModelCheckpoint, RichProgressBar, RichModelSummary
 from lightning.pytorch.loggers import TensorBoardLogger
 
-from datamodules.dogbreed_modules import DogBreedImageDataModule
-from models.dogbreed_classifer import DogBreedClassifier
+from datamodules.dogbreed_datamodule import DogBreedImageDataModule
+from models.timm_classifier import TimmClassifier
 from utils.logging_utils import setup_logger, task_wrapper
 
 @task_wrapper
@@ -37,7 +37,7 @@ def main(args):
     data_module = DogBreedImageDataModule(dl_path=data_dir, batch_size=32, num_workers=0)
 
     # Initialize Model
-    model = DogBreedClassifier(lr=1e-3)
+    model = TimmClassifier(lr=1e-3)
 
     # Set up checkpoint callback
     checkpoint_callback = CustomModelCheckpiont(

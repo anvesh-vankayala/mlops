@@ -5,15 +5,15 @@ import lightning as L
 from lightning.pytorch import Trainer
 from lightning.pytorch.callbacks import ModelCheckpoint
 from lightning import seed_everything
-from models.dogbreed_classifer import DogBreedClassifier  # Assuming your model is in a file named model.py
-from datamodules.dogbreed_modules import DogBreedImageDataModule  # Assuming you have a DataModule
+from models.timm_classifier import TimmClassifier  # Assuming your model is in a file named model.py
+from datamodules.dogbreed_datamodule import DogBreedImageDataModule  # Assuming you have a DataModule
 
 def evaluate_model(ckpt_path, data_dir):
     # Set seed for reproducibility
     seed_everything(42)
 
     # Load the model from checkpoint
-    model = DogBreedClassifier.load_from_checkpoint(ckpt_path)
+    model = TimmClassifier.load_from_checkpoint(ckpt_path)
     model.eval()  # Set the model to evaluation mode
 
     # Initialize the data module
