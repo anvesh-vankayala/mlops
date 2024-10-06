@@ -1645,3 +1645,5 @@ Traceback (most recent call last):
 
 IndexError: Target 2 is out of bounds.
 2024-10-06 12:13:24.771 | INFO     | utils.logging_utils:wrapper:17 - Starting train_and_save
+2024-10-06 12:17:55.925 | INFO     | utils.logging_utils:wrapper:17 - Starting train_and_save
+2024-10-06 12:20:21.953 | INFO     | utils.logging_utils:wrapper:20 - Finished train_and_save
