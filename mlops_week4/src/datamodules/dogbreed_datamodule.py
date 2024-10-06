@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 from torchvision.datasets.utils import download_and_extract_archive
-
+import zipfile
 
 class DogBreedImageDataModule(L.LightningDataModule):
     def __init__(self, dl_path: Union[str, Path] = "data", num_workers: int = 0, batch_size: int = 8):
@@ -18,8 +18,13 @@ class DogBreedImageDataModule(L.LightningDataModule):
     def prepare_data(self):
         """Download images and prepare images datasets."""
         print("val",self.data_path.joinpath("val"))
+        # zip_path = '/workspaces/mlops/mlops_week4/data/archive2.zip'
+        # extract_path = self._dl_path
+
+        # with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        #     zip_ref.extractall(extract_path)
         download_and_extract_archive(
-            url="/workspaces/mlops/torch_lightning1/dogbreed/data/archive 2.zip",
+            url="/workspaces/mlops/mlops_week4/data/archive2.zip",
             download_root=self._dl_path,
             filename="dataset.zip",
             remove_finished=True
