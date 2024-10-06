@@ -50,7 +50,7 @@ def split_dataset(source_dir, output_dir, split_ratio=0.8):
         print(f"Class {class_name}: {len(train_files)} train, {len(val_files)} val")
 
 if __name__ == "__main__":
-    source_dir = "dataset/dataset"
+    source_dir = "/workspaces/mlops/mlops_week4/data/dataset"
     output_dir = "dataset_split"
     split_ratio = 0.8
 

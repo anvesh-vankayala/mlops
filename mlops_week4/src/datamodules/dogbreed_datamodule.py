@@ -18,17 +18,17 @@ class DogBreedImageDataModule(L.LightningDataModule):
     def prepare_data(self):
         """Download images and prepare images datasets."""
         print("val",self.data_path.joinpath("val"))
-        # zip_path = '/workspaces/mlops/mlops_week4/data/archive2.zip'
-        # extract_path = self._dl_path
+        zip_path = '/workspaces/mlops/mlops_week4/data/archive2.zip'
+        extract_path = self._dl_path
 
-        # with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-        #     zip_ref.extractall(extract_path)
-        download_and_extract_archive(
-            url="/workspaces/mlops/mlops_week4/data/archive2.zip",
-            download_root=self._dl_path,
-            filename="dataset.zip",
-            remove_finished=True
-        )
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(extract_path)
+        # download_and_extract_archive(
+        #     url="/workspaces/mlops/mlops_week4/data/archive2.zip",
+        #     download_root=self._dl_path,
+        #     filename="dataset.zip",
+        #     remove_finished=True
+        # )
 
     @property
     def data_path(self):

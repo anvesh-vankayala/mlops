@@ -429,3 +429,378 @@ Traceback (most recent call last):
                                               └ <urllib.request.Request object at 0x7cbfdc513da0>
 
 ValueError: unknown url type: '/workspaces/mlops/mlops_week4/data/archive2.zip'
+2024-10-06 07:15:19.328 | INFO     | utils.logging_utils:wrapper:17 - Starting train_and_save
+2024-10-06 07:15:20.590 | ERROR    | utils.logging_utils:wrapper:23 - Error in train_and_save: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week4/data/dataset/val'
+Traceback (most recent call last):
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 72, in <module>
+    main(args)
+    │    └ Namespace(data='data', logs='logs', ckpt_path='model_storage')
+    └ <function main at 0x71f3006a93a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 64, in main
+    train_and_save(data_module, model, trainer)
+    │              │            │      └ <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>
+    │              │            └ TimmClassifier(
+    │              │                (model): ResNet(
+    │              │                  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │              │              ...
+    │              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+    └ <function train_and_save at 0x71f308dc42c0>
+
+> File "/workspaces/mlops/mlops_week4/src/utils/logging_utils.py", line 19, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>, TimmClassifier(
+             │         (model): ResNet(
+             │           (...
+             └ <function train_and_save at 0x71f328a622a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 15, in train_and_save
+    trainer.fit(model, data_module)
+    │       │   │      └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+    │       │   └ TimmClassifier(
+    │       │       (model): ResNet(
+    │       │         (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │       │     ...
+    │       └ <function Trainer.fit at 0x71f3022bf420>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+    │    └ <function _call_and_handle_interrupt at 0x71f3023c8720>
+    └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           │           │       └ {}
+           │           └ (TimmClassifier(
+           │               (model): ResNet(
+           │                 (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)...
+           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+    │    │    │                └ None
+    │    │    └ TimmClassifier(
+    │    │        (model): ResNet(
+    │    │          (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │    │      ...
+    │    └ <function Trainer._run at 0x71f3022bf920>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 990, in _run
+    results = self._run_stage()
+              │    └ <function Trainer._run_stage at 0x71f3022bfa60>
+              └ <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1034, in _run_stage
+    self._run_sanity_check()
+    │    └ <function Trainer._run_sanity_check at 0x71f3022bfb00>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1063, in _run_sanity_check
+    val_loop.run()
+    │        └ <function _no_grad_context.<locals>._decorator at 0x71f30246a340>
+    └ <lightning.pytorch.loops.evaluation_loop._EvaluationLoop object at 0x71f3005054c0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           │        │      │       └ {}
+           │        │      └ ()
+           │        └ <lightning.pytorch.loops.evaluation_loop._EvaluationLoop object at 0x71f3005054c0>
+           └ <function _EvaluationLoop.run at 0x71f30246a2a0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 109, in run
+    self.setup_data()
+    │    └ <function _EvaluationLoop.setup_data at 0x71f30246a3e0>
+    └ <lightning.pytorch.loops.evaluation_loop._EvaluationLoop object at 0x71f3005054c0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 165, in setup_data
+    dataloaders = _request_dataloader(source)
+                  │                   └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>, name='val_data...
+                  └ <function _request_dataloader at 0x71f3024319e0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 342, in _request_dataloader
+    return data_source.dataloader()
+           │           └ <function _DataLoaderSource.dataloader at 0x71f302431a80>
+           └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>, name='val_data...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 309, in dataloader
+    return call._call_lightning_datamodule_hook(self.instance.trainer, self.name)
+           │    │                               │    │        │        │    └ 'val_dataloader'
+           │    │                               │    │        │        └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>, name='val_data...
+           │    │                               │    │        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x71f300e8f4a0>
+           │    │                               │    └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+           │    │                               └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>, name='val_data...
+           │    └ <function _call_lightning_datamodule_hook at 0x71f3023c89a0>
+           └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           │   │       └ {}
+           │   └ ()
+           └ <bound method DogBreedImageDataModule.val_dataloader of <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x...
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 75, in val_dataloader
+    return self.__dataloader(train=False)
+           └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 68, in __dataloader
+    dataset = self.create_dataset(self.data_path.joinpath("val"), self.valid_transform)
+              │    │              │    │                          │    └ <property object at 0x71f3023002c0>
+              │    │              │    │                          └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+              │    │              │    └ <property object at 0x71f32878fce0>
+              │    │              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+              │    └ <function DogBreedImageDataModule.create_dataset at 0x71f3022f0ea0>
+              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x71f30068e930>
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 59, in create_dataset
+    return ImageFolder(root=root, transform=transform)
+           │                │               └ Compose(
+           │                │                     Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)
+           │                │                     ToTensor()
+           │                │                     Normalize(mean...
+           │                └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+           └ <class 'torchvision.datasets.folder.ImageFolder'>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 328, in __init__
+    super().__init__(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 149, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+                            │    │            │    └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+                            │    │            └ <unprintable ImageFolder object>
+                            │    └ <function DatasetFolder.find_classes at 0x71f306576200>
+                            └ <unprintable ImageFolder object>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 234, in find_classes
+    return find_classes(directory)
+           │            └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+           └ <function find_classes at 0x71f306575ee0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 41, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+                                             │  │       └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+                                             │  └ <built-in function scandir>
+                                             └ <module 'os' (frozen)>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week4/data/dataset/val'
+2024-10-06 07:42:01.229 | INFO     | utils.logging_utils:wrapper:17 - Starting train_and_save
+2024-10-06 07:42:01.231 | ERROR    | utils.logging_utils:wrapper:23 - Error in train_and_save: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week4/data/archive2.zip'
+Traceback (most recent call last):
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 72, in <module>
+    main(args)
+    │    └ Namespace(data='data', logs='logs', ckpt_path='model_storage')
+    └ <function main at 0x797576c993a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 64, in main
+    train_and_save(data_module, model, trainer)
+    │              │            │      └ <lightning.pytorch.trainer.trainer.Trainer object at 0x797576c7cd40>
+    │              │            └ TimmClassifier(
+    │              │                (model): ResNet(
+    │              │                  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │              │              ...
+    │              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x797576c7e7b0>
+    └ <function train_and_save at 0x79759edbea20>
+
+> File "/workspaces/mlops/mlops_week4/src/utils/logging_utils.py", line 19, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x797576c7e7b0>, TimmClassifier(
+             │         (model): ResNet(
+             │           (...
+             └ <function train_and_save at 0x79759f0822a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 15, in train_and_save
+    trainer.fit(model, data_module)
+    │       │   │      └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x797576c7e7b0>
+    │       │   └ TimmClassifier(
+    │       │       (model): ResNet(
+    │       │         (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │       │     ...
+    │       └ <function Trainer.fit at 0x797578a9f420>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x797576c7cd40>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+    │    └ <function _call_and_handle_interrupt at 0x797578ba8720>
+    └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           │           │       └ {}
+           │           └ (TimmClassifier(
+           │               (model): ResNet(
+           │                 (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)...
+           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x797576c7cd40>>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+    │    │    │                └ None
+    │    │    └ TimmClassifier(
+    │    │        (model): ResNet(
+    │    │          (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │    │      ...
+    │    └ <function Trainer._run at 0x797578a9f920>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x797576c7cd40>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 942, in _run
+    self._data_connector.prepare_data()
+    │    │               └ <function _DataConnector.prepare_data at 0x797578a15440>
+    │    └ <lightning.pytorch.trainer.connectors.data_connector._DataConnector object at 0x7975764348c0>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x797576c7cd40>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 94, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+    │    │                               └ <lightning.pytorch.trainer.trainer.Trainer object at 0x797576c7cd40>
+    │    └ <function _call_lightning_datamodule_hook at 0x797578ba89a0>
+    └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           │   │       └ {}
+           │   └ ()
+           └ <bound method DogBreedImageDataModule.prepare_data of <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x79...
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 24, in prepare_data
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+         │       │       └ '/workspaces/mlops/mlops_week4/data/archive2.zip'
+         │       └ <class 'zipfile.ZipFile'>
+         └ <module 'zipfile' from '/usr/local/python/3.12.1/lib/python3.12/zipfile/__init__.py'>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/zipfile/__init__.py", line 1321, in __init__
+    self.fp = io.open(file, filemode)
+    │    │    │  │    │     └ 'rb'
+    │    │    │  │    └ '/workspaces/mlops/mlops_week4/data/archive2.zip'
+    │    │    │  └ <built-in function open>
+    │    │    └ <module 'io' (frozen)>
+    │    └ None
+    └ <zipfile.ZipFile [closed]>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week4/data/archive2.zip'
+2024-10-06 07:42:36.366 | INFO     | utils.logging_utils:wrapper:17 - Starting train_and_save
+2024-10-06 07:42:36.768 | ERROR    | utils.logging_utils:wrapper:23 - Error in train_and_save: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week4/data/dataset/val'
+Traceback (most recent call last):
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 72, in <module>
+    main(args)
+    │    └ Namespace(data='data', logs='logs', ckpt_path='model_storage')
+    └ <function main at 0x707a387b93a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 64, in main
+    train_and_save(data_module, model, trainer)
+    │              │            │      └ <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>
+    │              │            └ TimmClassifier(
+    │              │                (model): ResNet(
+    │              │                  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │              │              ...
+    │              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+    └ <function train_and_save at 0x707a608b2a20>
+
+> File "/workspaces/mlops/mlops_week4/src/utils/logging_utils.py", line 19, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ (<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>, TimmClassifier(
+             │         (model): ResNet(
+             │           (...
+             └ <function train_and_save at 0x707a60b722a0>
+
+  File "/workspaces/mlops/mlops_week4/src/train.py", line 15, in train_and_save
+    trainer.fit(model, data_module)
+    │       │   │      └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+    │       │   └ TimmClassifier(
+    │       │       (model): ResNet(
+    │       │         (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │       │     ...
+    │       └ <function Trainer.fit at 0x707a3a3cf420>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+    │    └ <function _call_and_handle_interrupt at 0x707a3a4d8720>
+    └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           │           │       └ {}
+           │           └ (TimmClassifier(
+           │               (model): ResNet(
+           │                 (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)...
+           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+    │    │    │                └ None
+    │    │    └ TimmClassifier(
+    │    │        (model): ResNet(
+    │    │          (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    │    │      ...
+    │    └ <function Trainer._run at 0x707a3a3cf920>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 990, in _run
+    results = self._run_stage()
+              │    └ <function Trainer._run_stage at 0x707a3a3cfa60>
+              └ <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1034, in _run_stage
+    self._run_sanity_check()
+    │    └ <function Trainer._run_sanity_check at 0x707a3a3cfb00>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1063, in _run_sanity_check
+    val_loop.run()
+    │        └ <function _no_grad_context.<locals>._decorator at 0x707a3a57a340>
+    └ <lightning.pytorch.loops.evaluation_loop._EvaluationLoop object at 0x707a386115b0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           │        │      │       └ {}
+           │        │      └ ()
+           │        └ <lightning.pytorch.loops.evaluation_loop._EvaluationLoop object at 0x707a386115b0>
+           └ <function _EvaluationLoop.run at 0x707a3a57a2a0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 109, in run
+    self.setup_data()
+    │    └ <function _EvaluationLoop.setup_data at 0x707a3a57a3e0>
+    └ <lightning.pytorch.loops.evaluation_loop._EvaluationLoop object at 0x707a386115b0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 165, in setup_data
+    dataloaders = _request_dataloader(source)
+                  │                   └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>, name='val_data...
+                  └ <function _request_dataloader at 0x707a3a5419e0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 342, in _request_dataloader
+    return data_source.dataloader()
+           │           └ <function _DataLoaderSource.dataloader at 0x707a3a541a80>
+           └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>, name='val_data...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 309, in dataloader
+    return call._call_lightning_datamodule_hook(self.instance.trainer, self.name)
+           │    │                               │    │        │        │    └ 'val_dataloader'
+           │    │                               │    │        │        └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>, name='val_data...
+           │    │                               │    │        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x707a38c85670>
+           │    │                               │    └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+           │    │                               └ _DataLoaderSource(instance=<datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>, name='val_data...
+           │    └ <function _call_lightning_datamodule_hook at 0x707a3a4d89a0>
+           └ <module 'lightning.pytorch.trainer.call' from '/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/traine...
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           │   │       └ {}
+           │   └ ()
+           └ <bound method DogBreedImageDataModule.val_dataloader of <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x...
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 75, in val_dataloader
+    return self.__dataloader(train=False)
+           └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 68, in __dataloader
+    dataset = self.create_dataset(self.data_path.joinpath("val"), self.valid_transform)
+              │    │              │    │                          │    └ <property object at 0x707a3a3f3ec0>
+              │    │              │    │                          └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+              │    │              │    └ <property object at 0x707a3a3f3ce0>
+              │    │              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+              │    └ <function DogBreedImageDataModule.create_dataset at 0x707a3a400ea0>
+              └ <datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x707a3879a8a0>
+
+  File "/workspaces/mlops/mlops_week4/src/datamodules/dogbreed_datamodule.py", line 59, in create_dataset
+    return ImageFolder(root=root, transform=transform)
+           │                │               └ Compose(
+           │                │                     Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)
+           │                │                     ToTensor()
+           │                │                     Normalize(mean...
+           │                └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+           └ <class 'torchvision.datasets.folder.ImageFolder'>
+
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 328, in __init__
+    super().__init__(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 149, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+                            │    │            │    └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+                            │    │            └ <unprintable ImageFolder object>
+                            │    └ <function DatasetFolder.find_classes at 0x707a3e686200>
+                            └ <unprintable ImageFolder object>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 234, in find_classes
+    return find_classes(directory)
+           │            └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+           └ <function find_classes at 0x707a3e685ee0>
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/torchvision/datasets/folder.py", line 41, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+                                             │  │       └ PosixPath('/workspaces/mlops/mlops_week4/data/dataset/val')
+                                             │  └ <built-in function scandir>
+                                             └ <module 'os' (frozen)>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week4/data/dataset/val'
