@@ -1,0 +1,4 @@
+model:
+  ckpt_path: ./model_storage/epoch0-checkpoint.ckpt
+  data_dir: ./data
+  model_name: default_model
