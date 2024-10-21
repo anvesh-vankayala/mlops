@@ -18,3 +18,9 @@
 
     - Create configs directory with model configs, dataset configs and train.yaml
     - Create .githubs/workflows with ci.yaml (for CI/CD pipeline)
+
+- ### TODO
+    - Test cases to be added
+    - Test cases to be added as part of CI CD pipeline
+    - DVC configuration to be added, by saving trained and finalized model in DVC.
+    - 
