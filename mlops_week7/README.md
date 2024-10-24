@@ -20,7 +20,7 @@
     - Create .githubs/workflows with ci.yaml (for CI/CD pipeline)
 
 - ### TODO
-    - Create simple traning pipeline first
+    - Create simple traning pipeline first, with hydra configurations.
     - CI CD to be created for training cycle by publishing the score n logs.
     - Adding loggers to the hydra configuration
     - Hyperparmeter tuning with optuna
@@ -29,4 +29,4 @@
     - Test cases to be added as part of CI CD pipeline
     - DVC configuration to be added, by saving trained and finalized model in DVC.
     - Dockerization of the flow.
-    - Publishning as a package in github.
+    - Publishning as a package in github. 
