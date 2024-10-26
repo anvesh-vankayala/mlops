@@ -1,0 +1,4 @@
+defaults:
+  - _self_
+  - data: dogbreed
+  - model: dogbreed_classifier
