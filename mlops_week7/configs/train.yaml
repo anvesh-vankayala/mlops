@@ -2,3 +2,11 @@ defaults:
   - _self_
   - data: dogbreed
   - model: dogbreed_classifier
+  - logger : default
+  - paths : default
+  - callbacks: default
+  - trainer : default
+
+task_name : training
+train: true
+test : false

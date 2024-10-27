@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import logging
-import comet_ml
+# import comet_ml
 
 import hydra
 import torch
@@ -65,25 +65,25 @@ def train_task(
     return train_metrics
 
 
-@task_wrapper
-def test_task(
-    cfg: DictConfig,
-    trainer: L.Trainer,
-    model: L.LightningModule,
-    datamodule: L.LightningDataModule
-):
-    log.info("Starting testing!")
-    if cfg.callbacks.model_checkpoint.filename:
-        log.info(
-            f"Loading best checkpoint: {cfg.callbacks.model_checkpoint.filename}"
-        )
-        test_metrics = trainer.test(
-            model, datamodule, ckpt_path=cfg.callbacks.model_checkpoint.filename
-        )
-    else:
-        log.warning("No checkpoint found! Using current model weights.")
-        test_metrics = trainer.test(model, datamodule)
-    log.info(f"Test metrics:\n{test_metrics}")
+# @task_wrapper
+# def test_task(
+#     cfg: DictConfig,
+#     trainer: L.Trainer,
+#     model: L.LightningModule,
+#     datamodule: L.LightningDataModule
+# ):
+#     log.info("Starting testing!")
+#     if cfg.callbacks.model_checkpoint.filename:
+#         log.info(
+#             f"Loading best checkpoint: {cfg.callbacks.model_checkpoint.filename}"
+#         )
+#         test_metrics = trainer.test(
+#             model, datamodule, ckpt_path=cfg.callbacks.model_checkpoint.filename
+#         )
+#     else:
+#         log.warning("No checkpoint found! Using current model weights.")
+#         test_metrics = trainer.test(model, datamodule)
+#     log.info(f"Test metrics:\n{test_metrics}")
 
 
 
@@ -131,8 +131,8 @@ def train(cfg: DictConfig):
     print("train_metrics-", train_metrics)
     # Test the model
     test_metrics = {}
-    if cfg.get("test"):
-        test_metrics = test_task(cfg, trainer, model, datamodule)
+    # if cfg.get("test"):
+    #     test_metrics = test_task(cfg, trainer, model, datamodule)
 
     # Combine metrics
     # all_metrics = {**train_metrics, **test_metrics}

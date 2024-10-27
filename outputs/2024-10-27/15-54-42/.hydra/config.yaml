@@ -1,0 +1,13 @@
+task_name: training
+train: true
+test: false
+data:
+  data_path: ./data/archive2.zip
+model:
+  model_name: default_model
+  ckpt_path: ./model_storage/epoch0-checkpoint.ckpt
+  data_dir: ./data
+logger: {}
+paths: {}
+callbacks: {}
+trainer: {}
