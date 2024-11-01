@@ -13,7 +13,6 @@ class CustomImageFolder(ImageFolder):
     def __init__(self, root, filenames, transform=None):
         super().__init__(root, transform=transform)
         # Filter the dataset based on the provided filenames
-        # self.imgs = [os.path.basename(file) for file in filenames]
         self.infer_imgs = [img for img in self.imgs if os.path.basename(img[0]) in filenames]
         # print("self.imgs")
         # print(self.infer_imgs)
