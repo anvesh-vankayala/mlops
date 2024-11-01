@@ -1,0 +1,2 @@
+[2024-11-01 15:03:18,977][__main__][INFO] - Instantiating datamodule <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule>
+[2024-11-01 15:03:36,609][__main__][INFO] - Instantiating model <src.models.dogbreed_classifer.DogBreedClassifier>

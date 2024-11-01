@@ -6,6 +6,7 @@ defaults:
   - paths : default
   - callbacks: default
   - trainer : default
+  # - hparams: dogbreed_ex_vit_hparam
 
 task_name : training
 train: true
