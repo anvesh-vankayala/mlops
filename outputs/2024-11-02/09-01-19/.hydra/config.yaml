@@ -1,0 +1,95 @@
+task_name: training
+train: true
+test: false
+data:
+  _target_: src.datamodules.dogbreed_datamodule.DogBreedImageDataModule
+  dl_path: ${paths.data_dir}/dataset
+  num_workers: 0
+  batch_size: 32
+  splits:
+  - train
+  - val
+  pin_memory: false
+  filenames:
+  - Golden Retriever_12.jpg
+  - Beagle_7.jpg
+  - Golden Retriever_58.jpg
+  - Beagle_72.jpg
+  - Beagle_88.jpg
+  classes:
+    0: Beagle
+    1: Boxer
+    2: Bulldog
+    3: Dachshund
+    4: German_Shepherd
+    5: Golden_Retriever
+    6: Labrador_Retriever
+    7: Poodle
+    8: Rottweiler
+    9: Yorkshire_Terrier
+model:
+  _target_: src.models.dogbreed_classifer.TimmClassifier
+  base_model: resnet18
+  num_classes: 10
+  pretrained: true
+  lr: 0.001
+  weight_decay: 1.0e-05
+logger:
+  comet:
+    _target_: lightning.pytorch.loggers.CometLogger
+    save_dir: ${paths.output_dir}
+    experiment_name: ${paths.output_dir}_${now:%Y-%m-%d_%H-%M-%S}
+    api_key: p1DteVPrPThJCilEB9sjqgvr9
+    workspace: anvesh-vankayala
+  csv:
+    _target_: lightning.pytorch.loggers.csv_logs.CSVLogger
+    save_dir: ${paths.output_dir}
+    name: csv/
+    prefix: ''
+  mlflow:
+    _target_: lightning.pytorch.loggers.MLFlowLogger
+    experiment_name: dog_breed_exp
+    tracking_uri: file:${paths.log_dir}/mlruns
+    save_dir: ${paths.log_dir}/mlruns
+    log_model: false
+    prefix: ''
+paths:
+  root_dir: ${oc.env:PROJECT_ROOT}
+  data_dir: ${paths.root_dir}/data/
+  log_dir: ${paths.root_dir}/logs/
+  output_dir: ${hydra:runtime.output_dir}
+  work_dir: ${hydra:runtime.cwd}
+callbacks:
+  model_checkpoint:
+    _target_: src.train.CustomModelCheckpiont
+    dirpath: ${paths.output_dir}/checkpoints
+    filename: epoch_{epoch:03d}
+    monitor: val_acc
+    verbose: false
+    save_last: true
+    save_top_k: 1
+    mode: max
+    auto_insert_metric_name: false
+    save_weights_only: false
+    every_n_train_steps: null
+    train_time_interval: null
+    every_n_epochs: null
+    save_on_train_epoch_end: null
+  early_stopping:
+    _target_: lightning.pytorch.callbacks.EarlyStopping
+    monitor: val_acc
+    min_delta: 0.0
+    patience: 100
+    verbose: false
+    mode: max
+    strict: true
+    check_finite: true
+    stopping_threshold: null
+    divergence_threshold: null
+    check_on_train_epoch_end: null
+  model_summary:
+    _target_: lightning.pytorch.callbacks.RichModelSummary
+    max_depth: -1
+  rich_progress_bar:
+    _target_: lightning.pytorch.callbacks.RichProgressBar
+trainer: {}
