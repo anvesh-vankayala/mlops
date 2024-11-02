@@ -29,16 +29,17 @@
         ````
 
 - ### Detailed TODO's : 
-    - Create simple traning pipeline first, with hydra configurations.
+    - Create simple traning pipeline first, with hydra configurations. - Done
     - CI CD to be created for training cycle by publishing the score n logs.
-    - Adding loggers to the hydra configuration
-    - Hyperparmeter tuning with optuna
+    - Adding loggers to the hydra configuration - Done
+    - Hyperparmeter tuning with optuna 
     - Adding LR finder and Batch size optimization
     - Test cases to be added
     - Test cases to be added as part of CI CD pipeline
     - DVC configuration to be added, by saving trained and finalized model in DVC.
     - Dockerization of the flow.
     - Publishning as a package in github. 
+    - Add Mlflow and comet part of training and test tracking. - Done
 
 
 ##  Features to be attempted :
