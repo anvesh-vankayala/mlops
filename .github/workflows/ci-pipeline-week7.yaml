@@ -3,6 +3,8 @@ name: CI
 on:
   push:
     branches: [main]
+    paths:
+      - mlops_week7/**
 
 jobs:
   test: Run Tests
