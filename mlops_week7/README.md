@@ -57,3 +57,37 @@
 - Each experiment should run for at least 2 epochs
 - Before running the experiments, see if your model works with your hyper parameters options
 - Use Cursor for suggesting the hyper parms and creating the hparams.yaml file
+
+
+
+## pyproject.toml
+
+[project]
+name = "mlops-week7"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11.7"
+dependencies = [
+    "lightning[extra]==2.1.0",
+    "loguru>=0.7.2",
+    "rich>=13.9.2",
+    "timm>=1.0.9",
+    "torch @ https://download.pytorch.org/whl/cpu/torch-2.4.0%2Bcpu-cp311-cp311-linux_x86_64.whl",
+    "torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.19.0%2Bcpu-cp311-cp311-linux_x86_64.whl",
+    "torchmetrics>=1.0.3",
+    "rootutils==1.0.7",
+    "hydra-core==1.3.0",
+    "comet-ml>=3.31.0",
+    "mlflow>=1.0.0",
+    "pytest==8.3.3",
+    "pytest-cov==5.0.0",
+    "coverage==7.6.3",
+    "pytest-order==1.3.0",
+    "pytest-ordering==0.6",
+    "pytest-dependency==0.6.0",
+
+]
+
+[tool.pip]
+extra-index-url = "https://download.pytorch.org/whl/cpu"
