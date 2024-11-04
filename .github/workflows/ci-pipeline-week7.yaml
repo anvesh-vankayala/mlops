@@ -26,8 +26,8 @@ jobs:
         env:
           UV_EXTRA_INDEX_URL: https://download.pytorch.org/whl/cpu
         run: |
-          uv sync --index-url https://pypi.org/simple
-
+          uv sync
+          
       - name: Run coverage with pytest
         working-directory: mlops_week7
         run: |

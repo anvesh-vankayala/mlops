@@ -9,7 +9,7 @@ import rootutils
 root = rootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)
 
 print('Project root >>>>>>>>>>>>> :', root)
-
+ 
 # Import train function
 from src.train import train
 import logging
