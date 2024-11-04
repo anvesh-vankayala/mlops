@@ -52,7 +52,7 @@ class DogBreedImageDataModule(L.LightningDataModule):
         # print("val",self.data_path.joinpath("val"))
         dataset_path = self.data_path / "dataset"
         if not dataset_path.exists():
-            zip_path = '/workspaces/mlops/mlops_week4/data/archive2.zip'
+            zip_path = '../../data/archive2.zip'
             extract_path = self._dl_path
 
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
