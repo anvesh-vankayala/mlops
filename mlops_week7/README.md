@@ -28,7 +28,7 @@
         uv pip install -r pyproject.toml
         ````
 
-- ### Detailed TODO's : 
+- ### Detailed TODO's :  
     - Create simple traning pipeline first, with hydra configurations. - Done
     - CI CD to be created for training cycle by publishing the score n logs.
     - Adding loggers to the hydra configuration - Done
