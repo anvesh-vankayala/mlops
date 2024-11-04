@@ -354,3 +354,4 @@ Traceback (most recent call last):
 RuntimeError: Early stopping conditioned on metric `val_acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train/loss`, `train/acc`, `val/loss`, `val/acc`, `val/acc_best`, `hp_metric`
 2024-11-03 07:35:36.089 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
 2024-11-03 07:35:39.426 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-04 15:50:15.212 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task

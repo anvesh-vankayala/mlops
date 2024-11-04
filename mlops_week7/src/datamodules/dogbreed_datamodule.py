@@ -8,6 +8,7 @@ from torchvision import transforms
 from torchvision.datasets import ImageFolder
 from torchvision.datasets.utils import download_and_extract_archive
 import zipfile
+import pathlib
 
 class CustomImageFolder(ImageFolder):
     def __init__(self, root, filenames, transform=None):
@@ -50,6 +51,8 @@ class DogBreedImageDataModule(L.LightningDataModule):
     def prepare_data(self):
         """Download images and prepare images datasets."""
         # print("val",self.data_path.joinpath("val"))
+        current_dir = pathlib.Path(__file__).resolve().parent.parent.parent
+        data_file_path = current_dir.parent / 'data' / 'archive2.zip'
         dataset_path = self.data_path / "dataset"
         if not dataset_path.exists():
             zip_path = '../../data/archive2.zip'
