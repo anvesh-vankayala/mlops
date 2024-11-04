@@ -52,9 +52,9 @@ class DogBreedImageDataModule(L.LightningDataModule):
         """Download images and prepare images datasets."""
         # print("val",self.data_path.joinpath("val"))
         current_dir = pathlib.Path(__file__).resolve().parent.parent.parent
-        data_file_path = current_dir.parent / 'data' / 'archive2.zip'
+        data_file_path = current_dir / 'data' / 'archive2.zip'
         dataset_path = data_file_path/ 'data' / "dataset"
-        print('file path >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',pathlib.Path(__file__).resolve())
+        # print('file path >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',pathlib.Path(__file__).resolve())
         print('current_dir >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',current_dir)
         print('data_file_path >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',data_file_path)
         print('dataset_path >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',dataset_path)
