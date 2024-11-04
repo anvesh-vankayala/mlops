@@ -72,8 +72,8 @@ def test_dogbreed_ex_training(config, tmp_path, caplog):
     
     print('>>>>>>>>>>>>>>>----->',config)
     # Run training
-    train(config)
-    
+    rtn_metrics = train(config)
+    print('>>>>>>>>>>>>>>>XXXXXX > ', rtn_metrics)
     # Parse metrics from console output
     metrics = parse_metrics_from_console_output(caplog)
     
