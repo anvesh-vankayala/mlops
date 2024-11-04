@@ -54,6 +54,9 @@ class DogBreedImageDataModule(L.LightningDataModule):
         current_dir = pathlib.Path(__file__).resolve().parent.parent.parent
         data_file_path = current_dir.parent / 'data' / 'archive2.zip'
         dataset_path = data_file_path/ 'data' / "dataset"
+        print('current_dir >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',current_dir)
+        print('data_file_path >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',data_file_path)
+        print('dataset_path >>>>>>>>>>>>>>>>>>>>>>>>>>>-- ',dataset_path)
         if not dataset_path.exists():
             zip_path = data_file_path
             extract_path = self._dl_path
