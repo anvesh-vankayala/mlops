@@ -25,7 +25,7 @@ class CustomModelCheckpiont(ModelCheckpoint):
         trainer.lightning_module.save_transformed_model = True
         print(f'cwd>>>> {os.getcwd()}')
         filepath = filepath.split(".ckpt")[0]
-        filepath = f"{filepath}_patch_size-{trainer.model.patch_size}_embed_dim-{trainer.model.embed_dim}.ckpt"
+        filepath = f"{filepath}.ckpt"
         print(f'model filepath saved to >>>>>>>>>> {filepath}')
         super()._save_checkpoint(trainer, filepath)
         [print(f'listing directory{file}')for file in os.listdir(filepath)]

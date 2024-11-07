@@ -22,9 +22,9 @@ hydra:
     n_jobs: 4
 
     # Define the hyperparameters to optimize
-    params:
-        # model.patch_size: choice(8, 16, 32)
-        model.embed_dim: choice(64, 96, 128)
+    # params:
+    #     # model.patch_size: choice(8, 16, 32)
+    #     model.embed_dim: choice(64, 96, 128)
 
 
 # Other configurations
