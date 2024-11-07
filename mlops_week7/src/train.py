@@ -25,10 +25,10 @@ class CustomModelCheckpiont(ModelCheckpoint):
         trainer.lightning_module.save_transformed_model = True
         print(f'cwd>>>> {os.getcwd()}')
         filepath = filepath.split(".ckpt")[0]
-        filepath = f"{filepath}.ckpt"
+        filepath = f"{filepath}-checkpoint.ckpt"
         print(f'model filepath saved to >>>>>>>>>> {filepath}')
         super()._save_checkpoint(trainer, filepath)
-        [print(f'listing directory{file}')for file in os.listdir(filepath)]
+        # [print(f'listing directory{file}')for file in os.listdir(filepath)]
 
 
 def instantiate_callbacks(callback_cfg: DictConfig) -> List[L.Callback]:
