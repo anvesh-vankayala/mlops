@@ -71,7 +71,6 @@ def train_task(
     log.info(f"Training metrics:\n{train_metrics}")
     return train_metrics
 
-
 # @task_wrapper
 # def test_task(
 #     cfg: DictConfig,
