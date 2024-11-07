@@ -40,6 +40,8 @@
     - Dockerization of the flow.
     - Publishning as a package in github. 
     - Add Mlflow and comet part of training and test tracking. - Done
+    - Codecoverage : https://docs.codecov.com/reference/overview
+      token:13a0aa3e-424f-4802-8518-562560b7fe23
 
 
 ##  Features to be attempted :
