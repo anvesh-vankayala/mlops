@@ -29,7 +29,7 @@ class CustomModelCheckpiont(ModelCheckpoint):
         print(f'model filepath saved to >>>>>>>>>> {filepath}')
         print(f'parent listing {os.listdir('/home/runner/work/mlops/mlops/mlops_week7/')}')
         # print(f'folder listing {os.listdir(filepath)}')
-        super()._save_checkpoint(trainer, '/home/runner/work/mlops/mlops/mlops_week7/check_point.ckpt')
+        super()._save_checkpoint(trainer, None)
         # [print(f'listing directory{file}')for file in os.listdir(filepath)]
 
 
