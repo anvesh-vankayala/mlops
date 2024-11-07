@@ -1,4 +1,3 @@
-model_storage/*
 my_env/*
 /data/dataset/dataset*
 logs/*
