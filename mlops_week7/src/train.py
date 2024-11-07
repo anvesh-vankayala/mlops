@@ -23,6 +23,7 @@ log = logging.getLogger(__name__)
 class CustomModelCheckpiont(ModelCheckpoint):
     def _save_checkpoint(self, trainer, filepath):
         trainer.lightning_module.save_transformed_model = True
+        print(f'File saved to >>>>>>>>>>', {filepath})
         super()._save_checkpoint(trainer, filepath)
 
 
