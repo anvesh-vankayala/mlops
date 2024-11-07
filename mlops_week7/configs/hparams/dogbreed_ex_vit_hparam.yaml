@@ -34,7 +34,6 @@ data:
 model:
   base_model: 'convnext_tiny'
   pretrained: False
-  patch_size: 16
   embed_dim: 128
   depth: 6
   num_heads: 8
