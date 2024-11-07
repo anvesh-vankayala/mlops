@@ -66,7 +66,7 @@ def train_task(
 ):
     log.info("Starting training!")
     print("#######training started####")
-    trainer.fit(model, datamodule)
+    trainer.fit(model, datamodule,ckpt_path=None)
     train_metrics = trainer.callback_metrics
     log.info(f"Training metrics:\n{train_metrics}")
     return train_metrics
