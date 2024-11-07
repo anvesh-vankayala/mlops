@@ -90,7 +90,7 @@ def train_task(
 #         log.warning("No checkpoint found! Using current model weights.")
 #         test_metrics = trainer.test(model, datamodule)
 #     log.info(f"Test metrics:\n{test_metrics}")
-
+ 
 
 
 @hydra.main(version_base="1.3", config_path="../configs", config_name="train")
