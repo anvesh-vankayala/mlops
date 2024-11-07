@@ -23,10 +23,12 @@ log = logging.getLogger(__name__)
 class CustomModelCheckpiont(ModelCheckpoint):
     def _save_checkpoint(self, trainer, filepath):
         trainer.lightning_module.save_transformed_model = True
-        print(f'File filepath >>>>>>>>>> {filepath}')
         print(f'cwd>>>> {os.getcwd()}')
+        filepath = filepath.split(".ckpt")[0]
+        filepath = f"{filepath}_patch_size-{trainer.model.patch_size}_embed_dim-{trainer.model.embed_dim}.ckpt"
+        print(f'model filepath saved to >>>>>>>>>> {filepath}')
         super()._save_checkpoint(trainer, filepath)
-        [print(file)for file in os.listdir(filepath)]
+        [print(f'listing directory{file}')for file in os.listdir(filepath)]
 
 
 def instantiate_callbacks(callback_cfg: DictConfig) -> List[L.Callback]:
