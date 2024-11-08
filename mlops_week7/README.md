@@ -27,6 +27,10 @@
         ````
         uv pip install -r pyproject.toml
         ````
+    - 8, For hyper parameter tuning using optuna, run train.py by passing params
+        ````
+         python src/train.py -m hparams=dogbreed_ex_vit_hparam ++trainer.log_every_n_steps=5
+        ````
 
 - ### Detailed TODO's :    
     - Create simple traning pipeline first, with hydra configurations. - Done
