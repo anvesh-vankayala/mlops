@@ -1,0 +1,13 @@
+[2024-11-08 16:21:24,844][__main__][INFO] - Instantiating datamodule <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule>
+[2024-11-08 16:21:24,847][__main__][INFO] - Instantiating model <src.models.dogbreed_classifer.TimmClassifier>
+[2024-11-08 16:21:24,957][__main__][INFO] - Instantiating callback <src.train.CustomModelCheckpiont>
+[2024-11-08 16:21:24,959][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-11-08 16:21:24,960][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-11-08 16:21:24,960][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-11-08 16:21:24,961][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.CometLogger>
+[2024-11-08 16:21:24,963][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.csv_logs.CSVLogger>
+[2024-11-08 16:21:24,964][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.MLFlowLogger>
+[2024-11-08 16:21:24,967][__main__][INFO] - Instantiating trainer <lightning.Trainer>
+[2024-11-08 16:21:24,983][__main__][INFO] - Starting training!
+[2024-11-08 16:26:21,395][__main__][INFO] - Training metrics:
+{'train/loss': tensor(2.3798), 'train/acc': tensor(0.), 'val/loss': tensor(2.3108), 'val/acc': tensor(0.1020), 'val/acc_best': tensor(0.1122), 'hp_metric': tensor(0.1122)}

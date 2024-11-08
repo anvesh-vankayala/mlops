@@ -4,3 +4,6 @@ my_env/*
 logs/*
 *__pycache__*
 outputs/*
+outputs*
+*checkpoints/*
+multirun/*

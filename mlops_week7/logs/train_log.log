@@ -1,357 +1,199 @@
-2024-11-02 09:09:59.664 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
-2024-11-02 09:10:17.871 | ERROR    | src.utils.logging_utils:wrapper:23 - Error in train_task: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week7/data/dataset/dataset/train'
+2024-11-08 12:33:54.016 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 12:48:20.886 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 12:58:46.635 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 13:01:40.547 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 13:02:10.856 | ERROR    | src.utils.logging_utils:wrapper:23 - Error in train_task: [Errno 13] Permission denied: '/home/runner'
 Traceback (most recent call last):
 
-  File "/home/codespace/.local/share/uv/python/cpython-3.11.10-linux-x86_64-gnu/lib/python3.11/runpy.py", line 198, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
-           │         └ <code object <module> at 0x7cf7c5a1b470, file "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x6...
-           └ <function _run_code at 0x7cf7c56d9a80>
-  File "/home/codespace/.local/share/uv/python/cpython-3.11.10-linux-x86_64-gnu/lib/python3.11/runpy.py", line 88, in _run_code
-    exec(code, run_globals)
-         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
-         └ <code object <module> at 0x7cf7c5a1b470, file "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x6...
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 71, in <module>
-    cli.main()
-    │   └ <function main at 0x7cf7c4afd440>
-    └ <module 'debugpy.server.cli' from '/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/li...
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 501, in main
-    run()
-    └ <function run_file at 0x7cf7c4afd1c0>
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 351, in run_file
-    runpy.run_path(target, run_name="__main__")
-    │     │        └ '/workspaces/mlops/mlops_week7/src/train.py'
-    │     └ <function run_path at 0x7cf7c503b920>
-    └ <module '_pydevd_bundle.pydevd_runpy' from '/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/b...
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 310, in run_path
-    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
-           │                │     │             │                  │                     └ '/workspaces/mlops/mlops_week7/src/train.py'
-           │                │     │             │                  └ ''
-           │                │     │             └ '__main__'
-           │                │     └ None
-           │                └ <code object <module> at 0x624ee36476d0, file "/workspaces/mlops/mlops_week7/src/train.py", line 1>
-           └ <function _run_module_code at 0x7cf7c503b560>
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 127, in _run_module_code
-    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
-    │         │     │            │             │         │         │         └ '/workspaces/mlops/mlops_week7/src/train.py'
-    │         │     │            │             │         │         └ ''
-    │         │     │            │             │         └ None
-    │         │     │            │             └ '__main__'
-    │         │     │            └ None
-    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': '/workspaces/m...
-    │         └ <code object <module> at 0x624ee36476d0, file "/workspaces/mlops/mlops_week7/src/train.py", line 1>
-    └ <function _run_code at 0x7cf7c503b100>
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 118, in _run_code
-    exec(code, run_globals)
-         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': '/workspaces/m...
-         └ <code object <module> at 0x624ee36476d0, file "/workspaces/mlops/mlops_week7/src/train.py", line 1>
-
-  File "/workspaces/mlops/mlops_week7/src/train.py", line 151, in <module>
+  File "/workspaces/mlops/mlops_week7/src/train.py", line 156, in <module>
     train()
-    └ <function train at 0x7cf77f5dd260>
+    └ <function train at 0x77894faabce0>
 
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/main.py", line 90, in decorated_main
     _run_hydra(
-    └ <function _run_hydra at 0x7cf7bda61d00>
+    └ <function _run_hydra at 0x77897dfb3ba0>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
     _run_app(
-    └ <function _run_app at 0x7cf7bda61da0>
+    └ <function _run_app at 0x77897dfb3c40>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
     run_and_report(
-    └ <function run_and_report at 0x7cf7bda61bc0>
+    └ <function run_and_report at 0x77897dfb3b00>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 219, in run_and_report
     return func()
-           └ <function _run_app.<locals>.<lambda> at 0x7cf77f61ea20>
+           └ <function _run_app.<locals>.<lambda> at 0x77895cf56b60>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
     lambda: hydra.run(
-            │     └ <function Hydra.run at 0x7cf7bd99d9e0>
-            └ <hydra._internal.hydra.Hydra object at 0x7cf77f624150>
+            │     └ <function Hydra.run at 0x77897defc860>
+            └ <hydra._internal.hydra.Hydra object at 0x77895cf47f90>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 119, in run
     ret = run_job(
-          └ <function run_job at 0x7cf7bda60b80>
+          └ <function run_job at 0x77897dfb2b60>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
     ret.return_value = task_function(task_cfg)
     │   │              │             └ {'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dogbreed_datamodule.DogBreedIma...
-    │   │              └ <function train at 0x7cf77f5dd1c0>
-    │   └ <property object at 0x7cf7bda79670>
+    │   │              └ <function train at 0x77894faabc40>
+    │   └ <property object at 0x77897df77060>
     └ JobReturn(overrides=[], cfg={'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dog...
 
-  File "/workspaces/mlops/mlops_week7/src/train.py", line 130, in train
+  File "/workspaces/mlops/mlops_week7/src/train.py", line 135, in train
     train_metrics = train_task(cfg, trainer, model, datamodule)
-                    │          │    │        │      └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7cf77d432710>
+                    │          │    │        │      └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x77894d00a110>
                     │          │    │        └ TimmClassifier(
-                    │          │    │            (model): ResNet(
-                    │          │    │              (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-                    │          │    │          ...
-                    │          │    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7cf7695a1bd0>
+                    │          │    │            (model): MobileNetV3(
+                    │          │    │              (conv_stem): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bia...
+                    │          │    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
                     │          └ {'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dogbreed_datamodule.DogBreedIma...
-                    └ <function train_task at 0x7cf77f5dd080>
+                    └ <function train_task at 0x77894faabb00>
 
 > File "/workspaces/mlops/mlops_week7/src/utils/logging_utils.py", line 19, in wrapper
     result = func(*args, **kwargs)
              │     │       └ {}
              │     └ ({'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dogbreed_datamodule.DogBreedIm...
-             └ <function train_task at 0x7cf77f5dcfe0>
+             └ <function train_task at 0x77894faaba60>
 
-  File "/workspaces/mlops/mlops_week7/src/train.py", line 62, in train_task
-    trainer.fit(model, datamodule)
-    │       │   │      └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7cf77d432710>
+  File "/workspaces/mlops/mlops_week7/src/train.py", line 69, in train_task
+    trainer.fit(model, datamodule,ckpt_path=None)
+    │       │   │      └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x77894d00a110>
     │       │   └ TimmClassifier(
-    │       │       (model): ResNet(
-    │       │         (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-    │       │     ...
-    │       └ <function Trainer.fit at 0x7cf77f7011c0>
-    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7cf7695a1bd0>
+    │       │       (model): MobileNetV3(
+    │       │         (conv_stem): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bia...
+    │       └ <function Trainer.fit at 0x77894fa19440>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
 
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
     call._call_and_handle_interrupt(
-    │    └ <function _call_and_handle_interrupt at 0x7cf77f796160>
+    │    └ <function _call_and_handle_interrupt at 0x77894fad9c60>
     └ <module 'lightning.pytorch.trainer.call' from '/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/py...
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
     return trainer_fn(*args, **kwargs)
            │           │       └ {}
            │           └ (TimmClassifier(
-           │               (model): ResNet(
-           │                 (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)...
-           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x7cf7695a1bd0>>
+           │               (model): MobileNetV3(
+           │                 (conv_stem): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bi...
+           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
     self._run(model, ckpt_path=ckpt_path)
     │    │    │                └ None
     │    │    └ TimmClassifier(
-    │    │        (model): ResNet(
-    │    │          (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-    │    │      ...
-    │    └ <function Trainer._run at 0x7cf77f7016c0>
-    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7cf7695a1bd0>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 951, in _run
-    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
-    │    │                └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7cf7695a1bd0>
-    │    └ <function _call_setup_hook at 0x7cf77f7962a0>
-    └ <module 'lightning.pytorch.trainer.call' from '/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/py...
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 92, in _call_setup_hook
-    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
-    │                               │                       └ <TrainerFn.FITTING: 'fit'>
-    │                               └ <lightning.pytorch.trainer.trainer.Trainer object at 0x7cf7695a1bd0>
-    └ <function _call_lightning_datamodule_hook at 0x7cf77f796480>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
-    return fn(*args, **kwargs)
-           │   │       └ {'stage': <TrainerFn.FITTING: 'fit'>}
-           │   └ ()
-           └ <bound method DogBreedImageDataModule.setup of <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7cf77...
-
-  File "/workspaces/mlops/mlops_week7/src/datamodules/dogbreed_datamodule.py", line 62, in setup
-    self._train_dataset = self.create_dataset(
-    │                     │    └ <function DogBreedImageDataModule.create_dataset at 0x7cf77c9ebba0>
-    │                     └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7cf77d432710>
-    └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x7cf77d432710>
-
-  File "/workspaces/mlops/mlops_week7/src/datamodules/dogbreed_datamodule.py", line 103, in create_dataset
-    return ImageFolder(root=root, transform=transform)
-           │                │               └ Compose(
-           │                │                     Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)
-           │                │                     RandomHorizontalFlip(p=0.5)
-           │                │                  ...
-           │                └ PosixPath('/workspaces/mlops/mlops_week7/data/dataset/dataset/train')
-           └ <class 'torchvision.datasets.folder.ImageFolder'>
-
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/torchvision/datasets/folder.py", line 328, in __init__
-    super().__init__(
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/torchvision/datasets/folder.py", line 149, in __init__
-    classes, class_to_idx = self.find_classes(self.root)
-                            │    │            │    └ PosixPath('/workspaces/mlops/mlops_week7/data/dataset/dataset/train')
-                            │    │            └ <unprintable ImageFolder object>
-                            │    └ <function DatasetFolder.find_classes at 0x7cf77f20a3e0>
-                            └ <unprintable ImageFolder object>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/torchvision/datasets/folder.py", line 234, in find_classes
-    return find_classes(directory)
-           │            └ PosixPath('/workspaces/mlops/mlops_week7/data/dataset/dataset/train')
-           └ <function find_classes at 0x7cf77f20a0c0>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/torchvision/datasets/folder.py", line 41, in find_classes
-    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
-                                             │  │       └ PosixPath('/workspaces/mlops/mlops_week7/data/dataset/dataset/train')
-                                             │  └ <built-in function scandir>
-                                             └ <module 'os' from '/home/codespace/.local/share/uv/python/cpython-3.11.10-linux-x86_64-gnu/lib/python3.11/os.py'>
-
-FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/mlops/mlops_week7/data/dataset/dataset/train'
-2024-11-02 09:17:42.689 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
-2024-11-02 09:20:34.193 | ERROR    | src.utils.logging_utils:wrapper:23 - Error in train_task: Early stopping conditioned on metric `val_acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train/loss`, `train/acc`, `val/loss`, `val/acc`, `val/acc_best`, `hp_metric`
-Traceback (most recent call last):
-
-  File "/home/codespace/.local/share/uv/python/cpython-3.11.10-linux-x86_64-gnu/lib/python3.11/runpy.py", line 198, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
-           │         └ <code object <module> at 0x74aae5a9f470, file "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x6...
-           └ <function _run_code at 0x74aae575da80>
-  File "/home/codespace/.local/share/uv/python/cpython-3.11.10-linux-x86_64-gnu/lib/python3.11/runpy.py", line 88, in _run_code
-    exec(code, run_globals)
-         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
-         └ <code object <module> at 0x74aae5a9f470, file "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x6...
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 71, in <module>
-    cli.main()
-    │   └ <function main at 0x74aae4b81440>
-    └ <module 'debugpy.server.cli' from '/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/li...
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 501, in main
-    run()
-    └ <function run_file at 0x74aae4b811c0>
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 351, in run_file
-    runpy.run_path(target, run_name="__main__")
-    │     │        └ '/workspaces/mlops/mlops_week7/src/train.py'
-    │     └ <function run_path at 0x74aae50bf920>
-    └ <module '_pydevd_bundle.pydevd_runpy' from '/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/b...
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 310, in run_path
-    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
-           │                │     │             │                  │                     └ '/workspaces/mlops/mlops_week7/src/train.py'
-           │                │     │             │                  └ ''
-           │                │     │             └ '__main__'
-           │                │     └ None
-           │                └ <code object <module> at 0x5d589d3cac10, file "/workspaces/mlops/mlops_week7/src/train.py", line 1>
-           └ <function _run_module_code at 0x74aae50bf560>
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 127, in _run_module_code
-    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
-    │         │     │            │             │         │         │         └ '/workspaces/mlops/mlops_week7/src/train.py'
-    │         │     │            │             │         │         └ ''
-    │         │     │            │             │         └ None
-    │         │     │            │             └ '__main__'
-    │         │     │            └ None
-    │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': '/workspaces/m...
-    │         └ <code object <module> at 0x5d589d3cac10, file "/workspaces/mlops/mlops_week7/src/train.py", line 1>
-    └ <function _run_code at 0x74aae50bf100>
-
-  File "/home/codespace/.vscode-remote/extensions/ms-python.debugpy-2024.12.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 118, in _run_code
-    exec(code, run_globals)
-         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': None, '__spec__': None, '__file__': '/workspaces/m...
-         └ <code object <module> at 0x5d589d3cac10, file "/workspaces/mlops/mlops_week7/src/train.py", line 1>
-
-  File "/workspaces/mlops/mlops_week7/src/train.py", line 151, in <module>
-    train()
-    └ <function train at 0x74aa9f605260>
-
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/main.py", line 90, in decorated_main
-    _run_hydra(
-    └ <function _run_hydra at 0x74aadd255d00>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
-    _run_app(
-    └ <function _run_app at 0x74aadd255da0>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
-    run_and_report(
-    └ <function run_and_report at 0x74aadd255bc0>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 219, in run_and_report
-    return func()
-           └ <function _run_app.<locals>.<lambda> at 0x74aa9f646a20>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
-    lambda: hydra.run(
-            │     └ <function Hydra.run at 0x74aadd18d9e0>
-            └ <hydra._internal.hydra.Hydra object at 0x74aa9f61d150>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 119, in run
-    ret = run_job(
-          └ <function run_job at 0x74aadd254b80>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
-    ret.return_value = task_function(task_cfg)
-    │   │              │             └ {'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dogbreed_datamodule.DogBreedIma...
-    │   │              └ <function train at 0x74aa9f6051c0>
-    │   └ <property object at 0x74aadd26d710>
-    └ JobReturn(overrides=[], cfg={'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dog...
-
-  File "/workspaces/mlops/mlops_week7/src/train.py", line 130, in train
-    train_metrics = train_task(cfg, trainer, model, datamodule)
-                    │          │    │        │      └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x74aa9f532b10>
-                    │          │    │        └ TimmClassifier(
-                    │          │    │            (model): ResNet(
-                    │          │    │              (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-                    │          │    │          ...
-                    │          │    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-                    │          └ {'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dogbreed_datamodule.DogBreedIma...
-                    └ <function train_task at 0x74aa9f605080>
-
-> File "/workspaces/mlops/mlops_week7/src/utils/logging_utils.py", line 19, in wrapper
-    result = func(*args, **kwargs)
-             │     │       └ {}
-             │     └ ({'task_name': 'training', 'train': True, 'test': False, 'data': {'_target_': 'src.datamodules.dogbreed_datamodule.DogBreedIm...
-             └ <function train_task at 0x74aa9f604fe0>
-
-  File "/workspaces/mlops/mlops_week7/src/train.py", line 62, in train_task
-    trainer.fit(model, datamodule)
-    │       │   │      └ <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule object at 0x74aa9f532b10>
-    │       │   └ TimmClassifier(
-    │       │       (model): ResNet(
-    │       │         (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-    │       │     ...
-    │       └ <function Trainer.fit at 0x74aa9f7291c0>
-    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
-    call._call_and_handle_interrupt(
-    │    └ <function _call_and_handle_interrupt at 0x74aa9f9c2160>
-    └ <module 'lightning.pytorch.trainer.call' from '/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/py...
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
-    return trainer_fn(*args, **kwargs)
-           │           │       └ {}
-           │           └ (TimmClassifier(
-           │               (model): ResNet(
-           │                 (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)...
-           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
-    self._run(model, ckpt_path=ckpt_path)
-    │    │    │                └ None
-    │    │    └ TimmClassifier(
-    │    │        (model): ResNet(
-    │    │          (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-    │    │      ...
-    │    └ <function Trainer._run at 0x74aa9f7296c0>
-    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
+    │    │        (model): MobileNetV3(
+    │    │          (conv_stem): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bia...
+    │    └ <function Trainer._run at 0x77894fa19940>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 990, in _run
     results = self._run_stage()
-              │    └ <function Trainer._run_stage at 0x74aa9f729800>
-              └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
+              │    └ <function Trainer._run_stage at 0x77894fa19a80>
+              └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1036, in _run_stage
     self.fit_loop.run()
-    │    │        └ <function _FitLoop.run at 0x74aa9f8b2c00>
-    │    └ <lightning.pytorch.loops.fit_loop._FitLoop object at 0x74aa893a33d0>
-    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
+    │    │        └ <function _FitLoop.run at 0x77894fba8900>
+    │    └ <lightning.pytorch.loops.fit_loop._FitLoop object at 0x77893cf33bd0>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 203, in run
     self.on_advance_end()
-    │    └ <function _FitLoop.on_advance_end at 0x74aa9f8b2fc0>
-    └ <lightning.pytorch.loops.fit_loop._FitLoop object at 0x74aa893a33d0>
+    │    └ <function _FitLoop.on_advance_end at 0x77894fba8cc0>
+    └ <lightning.pytorch.loops.fit_loop._FitLoop object at 0x77893cf33bd0>
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 374, in on_advance_end
     call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
-    │    │                    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-    │    └ <function _call_callback_hooks at 0x74aa9f9c25c0>
+    │    │                    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    │    └ <function _call_callback_hooks at 0x77894fada020>
     └ <module 'lightning.pytorch.trainer.call' from '/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/py...
   File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 208, in _call_callback_hooks
     fn(trainer, trainer.lightning_module, *args, **kwargs)
     │  │        │       │                  │       └ {}
     │  │        │       │                  └ ()
-    │  │        │       └ <property object at 0x74aa9f72cd60>
-    │  │        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-    │  └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-    └ <bound method EarlyStopping.on_train_epoch_end of <lightning.pytorch.callbacks.early_stopping.EarlyStopping object at 0x74aa9...
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 183, in on_train_epoch_end
-    self._run_early_stopping_check(trainer)
-    │    │                         └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-    │    └ <function EarlyStopping._run_early_stopping_check at 0x74aaa004b880>
-    └ <lightning.pytorch.callbacks.early_stopping.EarlyStopping object at 0x74aa9c9c5c50>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 194, in _run_early_stopping_check
-    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
-       │       │                   │    └ <function EarlyStopping._validate_condition_metric at 0x74aaa004b420>
-       │       │                   └ <lightning.pytorch.callbacks.early_stopping.EarlyStopping object at 0x74aa9c9c5c50>
-       │       └ False
-       └ <lightning.pytorch.trainer.trainer.Trainer object at 0x74aa893b0a10>
-  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 149, in _validate_condition_metric
-    raise RuntimeError(error_msg)
-                       └ 'Early stopping conditioned on metric `val_acc` which is not available. Pass in or modify your `EarlyStopping` callback to us...
+    │  │        │       └ <property object at 0x77894fa02070>
+    │  │        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    │  └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    └ <bound method ModelCheckpoint.on_train_epoch_end of <src.train.CustomModelCheckpiont object at 0x77894c31d7d0>>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 311, in on_train_epoch_end
+    self._save_topk_checkpoint(trainer, monitor_candidates)
+    │    │                     │        └ {'train/loss': tensor(0.1636), 'train/acc': tensor(1.), 'val/loss': tensor(5.3723), 'val/acc': tensor(0.1837), 'val/acc_best'...
+    │    │                     └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    │    └ <function ModelCheckpoint._save_topk_checkpoint at 0x77894ff6eca0>
+    └ <src.train.CustomModelCheckpiont object at 0x77894c31d7d0>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 368, in _save_topk_checkpoint
+    self._save_monitor_checkpoint(trainer, monitor_candidates)
+    │    │                        │        └ {'train/loss': tensor(0.1636), 'train/acc': tensor(1.), 'val/loss': tensor(5.3723), 'val/acc': tensor(0.1837), 'val/acc_best'...
+    │    │                        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    │    └ <function ModelCheckpoint._save_monitor_checkpoint at 0x77894ff6f880>
+    └ <src.train.CustomModelCheckpiont object at 0x77894c31d7d0>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 681, in _save_monitor_checkpoint
+    self._update_best_and_save(current, trainer, monitor_candidates)
+    │    │                     │        │        └ {'train/loss': tensor(0.1636), 'train/acc': tensor(1.), 'val/loss': tensor(5.3723), 'val/acc': tensor(0.1837), 'val/acc_best'...
+    │    │                     │        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    │    │                     └ tensor(0.1837)
+    │    └ <function ModelCheckpoint._update_best_and_save at 0x77894ff6f9c0>
+    └ <src.train.CustomModelCheckpiont object at 0x77894c31d7d0>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 733, in _update_best_and_save
+    self._save_checkpoint(trainer, filepath)
+    │    │                │        └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage/.ckpt'
+    │    │                └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+    │    └ <function CustomModelCheckpiont._save_checkpoint at 0x77894c0ee660>
+    └ <src.train.CustomModelCheckpiont object at 0x77894c31d7d0>
 
-RuntimeError: Early stopping conditioned on metric `val_acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train/loss`, `train/acc`, `val/loss`, `val/acc`, `val/acc_best`, `hp_metric`
-2024-11-03 07:35:36.089 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
-2024-11-03 07:35:39.426 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
-2024-11-04 15:50:15.212 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+  File "/workspaces/mlops/mlops_week7/src/train.py", line 32, in _save_checkpoint
+    super()._save_checkpoint(trainer, filepath)
+                             │        └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage/.ckpt'
+                             └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 373, in _save_checkpoint
+    trainer.save_checkpoint(filepath, self.save_weights_only)
+    │       │               │         │    └ False
+    │       │               │         └ <src.train.CustomModelCheckpiont object at 0x77894c31d7d0>
+    │       │               └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage/.ckpt'
+    │       └ <function Trainer.save_checkpoint at 0x77894fa1b060>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1384, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+    │    │                        │           │                         └ None
+    │    │                        │           └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage/.ckpt'
+    │    │                        └ {'epoch': 0, 'global_step': 13, 'pytorch-lightning_version': '2.1.0', 'state_dict': OrderedDict([('model.conv_stem.weight', t...
+    │    └ <property object at 0x77894fa01da0>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x77893cf42390>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 482, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+    │    │                             │           │                         └ None
+    │    │                             │           └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage/.ckpt'
+    │    │                             └ {'epoch': 0, 'global_step': 13, 'pytorch-lightning_version': '2.1.0', 'state_dict': OrderedDict([('model.conv_stem.weight', t...
+    │    └ <property object at 0x77894fb346d0>
+    └ <lightning.pytorch.strategies.single_device.SingleDeviceStrategy object at 0x77893f394310>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/lightning/fabric/plugins/io/torch_io.py", line 54, in save_checkpoint
+    fs.makedirs(os.path.dirname(path), exist_ok=True)
+    │  │        │  │    │       └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage/.ckpt'
+    │  │        │  │    └ <function dirname at 0x77897e70d080>
+    │  │        │  └ <module 'posixpath' (frozen)>
+    │  │        └ <module 'os' (frozen)>
+    │  └ <function LocalFileSystem.makedirs at 0x77895c1ae7a0>
+    └ <fsspec.implementations.local.LocalFileSystem object at 0x77894c3678d0>
+  File "/workspaces/mlops/mlops_week7/my_env/lib/python3.11/site-packages/fsspec/implementations/local.py", line 54, in makedirs
+    os.makedirs(path, exist_ok=exist_ok)
+    │  │        │              └ True
+    │  │        └ '/home/runner/work/mlops/mlops/mlops_week7/model_storage'
+    │  └ <function makedirs at 0x77897e7093a0>
+    └ <module 'os' (frozen)>
+  File "<frozen os>", line 215, in makedirs
+  File "<frozen os>", line 215, in makedirs
+  File "<frozen os>", line 215, in makedirs
+  [Previous line repeated 2 more times]
+  File "<frozen os>", line 225, in makedirs
+
+PermissionError: [Errno 13] Permission denied: '/home/runner'
+2024-11-08 13:22:10.032 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 13:24:20.415 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 13:29:11.580 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 14:00:27.427 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 14:05:31.657 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 15:27:47.549 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 15:48:58.653 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 15:54:07.784 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 15:54:08.081 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 15:59:50.516 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 16:16:40.338 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 16:21:24.659 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 16:21:24.983 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 16:26:21.395 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 16:26:21.691 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 16:32:08.630 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 16:32:09.707 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task
+2024-11-08 16:36:56.435 | INFO     | src.utils.logging_utils:wrapper:20 - Finished train_task
+2024-11-08 16:36:56.711 | INFO     | src.utils.logging_utils:wrapper:17 - Starting train_task

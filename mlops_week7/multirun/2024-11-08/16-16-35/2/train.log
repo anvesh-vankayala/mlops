@@ -1,0 +1,15 @@
+[2024-11-08 16:26:21,554][__main__][INFO] - Instantiating datamodule <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule>
+[2024-11-08 16:26:21,557][__main__][INFO] - Instantiating model <src.models.dogbreed_classifer.TimmClassifier>
+[2024-11-08 16:26:21,665][__main__][INFO] - Instantiating callback <src.train.CustomModelCheckpiont>
+[2024-11-08 16:26:21,667][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-11-08 16:26:21,668][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-11-08 16:26:21,668][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-11-08 16:26:21,669][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.CometLogger>
+[2024-11-08 16:26:21,671][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.csv_logs.CSVLogger>
+[2024-11-08 16:26:21,672][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.MLFlowLogger>
+[2024-11-08 16:26:21,675][__main__][INFO] - Instantiating trainer <lightning.Trainer>
+[2024-11-08 16:26:21,691][__main__][INFO] - Starting training!
+[2024-11-08 16:26:42,572][urllib3.connectionpool][WARNING] - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7130dfdbc710>, 'Connection to www.comet.com timed out. (connect timeout=10)')': /clientlib/logger/add/run
+[2024-11-08 16:27:06,594][urllib3.connectionpool][WARNING] - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7130dfdbd510>, 'Connection to www.comet.com timed out. (connect timeout=10)')': /clientlib/logger/add/run
+[2024-11-08 16:32:08,629][__main__][INFO] - Training metrics:
+{'train/loss': tensor(2.9676), 'train/acc': tensor(0.), 'val/loss': tensor(2.9977), 'val/acc': tensor(0.1684), 'val/acc_best': tensor(0.1684), 'hp_metric': tensor(0.1684)}

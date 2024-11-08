@@ -1,0 +1,8 @@
+base_model: efficientnet_b0
+num_classes: 10
+pretrained: false
+lr: 0.01
+weight_decay: 1.0e-06
+factor: 0.1
+patience: 10
+min_lr: 1.0e-06

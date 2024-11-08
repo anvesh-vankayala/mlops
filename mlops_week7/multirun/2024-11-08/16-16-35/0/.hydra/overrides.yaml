@@ -1,0 +1,7 @@
+- model.base_model=resnet18
+- model.num_classes=10
+- model.pretrained=False
+- model.lr=1e-05
+- model.weight_decay=1e-06
+- hparams=dogbreed_ex_vit_hparam
+- ++trainer.log_every_n_steps=5

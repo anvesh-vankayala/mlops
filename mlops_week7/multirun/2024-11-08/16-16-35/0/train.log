@@ -1,0 +1,14 @@
+[2024-11-08 16:16:36,707][__main__][INFO] - Instantiating datamodule <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule>
+[2024-11-08 16:16:37,732][__main__][INFO] - Instantiating model <src.models.dogbreed_classifer.TimmClassifier>
+[2024-11-08 16:16:38,265][__main__][INFO] - Instantiating callback <src.train.CustomModelCheckpiont>
+[2024-11-08 16:16:38,269][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-11-08 16:16:38,270][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-11-08 16:16:38,271][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-11-08 16:16:38,272][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.CometLogger>
+[2024-11-08 16:16:39,347][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.csv_logs.CSVLogger>
+[2024-11-08 16:16:39,349][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.MLFlowLogger>
+[2024-11-08 16:16:40,322][__main__][INFO] - Instantiating trainer <lightning.Trainer>
+[2024-11-08 16:16:40,338][__main__][INFO] - Starting training!
+[2024-11-08 16:17:04,569][urllib3.connectionpool][WARNING] - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='www.comet.com', port=443): Read timed out. (read timeout=10)")': /clientlib/rest/v2/write/experiment/output
+[2024-11-08 16:21:24,659][__main__][INFO] - Training metrics:
+{'train/loss': tensor(2.4773), 'train/acc': tensor(0.), 'val/loss': tensor(2.3059), 'val/acc': tensor(0.1020), 'val/acc_best': tensor(0.1020), 'hp_metric': tensor(0.1020)}

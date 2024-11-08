@@ -1,0 +1,6 @@
+Requirement already satisfied: hydra-joblib-launcher in /usr/local/python/3.12.1/lib/python3.12/site-packages (1.2.0)
+Requirement already satisfied: hydra-core>=1.1.0.dev7 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from hydra-joblib-launcher) (1.4.0.dev1)
+Requirement already satisfied: joblib>=0.14.0 in /home/codespace/.local/lib/python3.12/site-packages (from hydra-joblib-launcher) (1.4.2)
+Requirement already satisfied: omegaconf>=2.4.0.dev2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from hydra-core>=1.1.0.dev7->hydra-joblib-launcher) (2.4.0.dev3)
+Requirement already satisfied: packaging in /home/codespace/.local/lib/python3.12/site-packages (from hydra-core>=1.1.0.dev7->hydra-joblib-launcher) (24.1)
+Requirement already satisfied: PyYAML>=5.1.0 in /home/codespace/.local/lib/python3.12/site-packages (from omegaconf>=2.4.0.dev2->hydra-core>=1.1.0.dev7->hydra-joblib-launcher) (6.0.2)

@@ -24,12 +24,12 @@ class CustomModelCheckpiont(ModelCheckpoint):
     def _save_checkpoint(self, trainer, filepath):
         trainer.lightning_module.save_transformed_model = True
         print(f'cwd>>>> {os.getcwd()}')
-        filepath = filepath.split(".ckpt")[0]
+        # filepath = filepath.split(".ckpt")[0]
         # filepath = f"{filepath}-checkpoint.ckpt"
         print(f'model filepath saved to >>>>>>>>>> {filepath}')
-        print(f'parent listing {os.listdir('/home/runner/work/mlops/mlops/mlops_week7/')}')
+        # print(f'parent listing {os.listdir('/home/runner/work/mlops/mlops/mlops_week7/')}')
         # print(f'folder listing {os.listdir(filepath)}')
-        super()._save_checkpoint(trainer, None)
+        super()._save_checkpoint(trainer, filepath)
         # [print(f'listing directory{file}')for file in os.listdir(filepath)]
 
 

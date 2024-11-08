@@ -1,0 +1,11 @@
+[2024-11-08 16:36:56,625][__main__][INFO] - Instantiating datamodule <src.datamodules.dogbreed_datamodule.DogBreedImageDataModule>
+[2024-11-08 16:36:56,628][__main__][INFO] - Instantiating model <src.models.dogbreed_classifer.TimmClassifier>
+[2024-11-08 16:36:56,682][__main__][INFO] - Instantiating callback <src.train.CustomModelCheckpiont>
+[2024-11-08 16:36:56,685][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-11-08 16:36:56,686][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-11-08 16:36:56,686][__main__][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-11-08 16:36:56,687][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.CometLogger>
+[2024-11-08 16:36:56,690][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.csv_logs.CSVLogger>
+[2024-11-08 16:36:56,691][__main__][INFO] - instantiating logger <lightning.pytorch.loggers.MLFlowLogger>
+[2024-11-08 16:36:56,694][__main__][INFO] - Instantiating trainer <lightning.Trainer>
+[2024-11-08 16:36:56,711][__main__][INFO] - Starting training!
