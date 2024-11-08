@@ -7,7 +7,7 @@ defaults:
   - callbacks: default
   - trainer : default
   - hparams: null #dogbreed_ex_vit_hparam
-  # - experiment : dogbreed_ex_train
+  - experiment : dogbreed_ex_train
 
 task_name : training
 train: true
