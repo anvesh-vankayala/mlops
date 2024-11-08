@@ -33,9 +33,9 @@
     - Integrate CI CD wirh github actions - Done
     - CI CD to be created for training cycle by publishing the score n logs.
     - Adding loggers to the hydra configuration - Done
-    - Hyperparmeter tuning with optuna 
+    - Hyperparmeter tuning with optuna - Done
     - Adding LR finder and Batch size optimization
-    - Test cases to be added
+    - Test cases to be added - Done
     - Test cases to be added as part of CI CD pipeline
     - DVC configuration to be added, for managing data versioning with DVC.
     - Dockerization of the flow.
