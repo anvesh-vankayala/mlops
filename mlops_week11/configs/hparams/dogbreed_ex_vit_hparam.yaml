@@ -1,0 +1,45 @@
+# @package _global_
+
+defaults:
+  - override /hydra/sweeper: optuna
+
+# We want to optimize for the highest test accuracy
+optimization_metric: "val/acc"
+
+# Override the experiment name
+experiment_name: "dogbreed_hparam_optimization"
+
+hydra:
+  sweeper:
+    sampler:
+      _target_: optuna.samplers.TPESampler
+      seed: 123
+      n_startup_trials: 3
+    direction: maximize
+    study_name: dogbreed_hparam_optimization
+    storage: null
+    n_trials: 5
+    n_jobs: 4
+
+    # Define the hyperparameters to optimize
+    params:
+      model.base_model: choice("resnet18", "efficientnet_b0")
+      model.num_classes: choice(10)
+      model.pretrained: choice(true, false)
+      model.lr: choice(1e-5, 1e-2)  # Learning rate
+      model.weight_decay: choice(1e-6, 1e-2)  # Weight decay
+
+# Other configurations
+data:
+  batch_size: 32
+
+model:
+  base_model: "resnet18"
+  num_classes: 10
+  pretrained: true
+  lr: 1e-3
+  weight_decay: 1e-5
+
+trainer:
+  min_epochs: 1
+  max_epochs: 2

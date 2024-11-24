@@ -1,0 +1,14 @@
+defaults:
+  - _self_
+  - data: dogbreed
+  - model: dogbreed_classifier
+  - logger : default
+  - paths : default
+  - callbacks: default
+  - trainer : default
+  - hparams: null #dogbreed_ex_vit_hparam
+  - experiment : dogbreed_ex_train
+
+task_name : training
+train: true
+test : false
