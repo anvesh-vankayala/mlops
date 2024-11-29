@@ -2,8 +2,8 @@
 
 model_checkpoint:
   _target_: src.train.CustomModelCheckpiont
-  dirpath: null # directory to save the model file
-  filename: "../../model_storage/epoch-checkpoint.ckpt.ckpt" # checkpoint filename
+  dirpath: "../../model_storage" # directory to save the model file
+  filename: "epoch-checkpoint.ckpt" # checkpoint filename
   # filename: "/home/runner/work/mlops/mlops/mlops_week7/model_storage/epoch-checkpoint.ckpt.ckpt"
   monitor: null # name of the logged metric which determines when model is improving
   verbose: False # verbosity mode

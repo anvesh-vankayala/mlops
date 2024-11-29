@@ -26,7 +26,7 @@ model:
 
 trainer:
   min_epochs: 1
-  max_epochs: 1
+  max_epochs: 10
 
 callbacks:
   model_checkpoint:
@@ -34,9 +34,9 @@ callbacks:
     mode: "max"
     save_top_k: 1
     save_last: True
-    filename: "/home/runner/work/mlops/mlops/mlops_week7/model_storage/"
+    filename: "/home/runner/work/mlops/mlops/mlops_week11/model_storage/"
 
   early_stopping:
     monitor: "val/acc"
-    patience: 3
+    patience: 100
     mode: "max"
