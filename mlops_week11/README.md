@@ -1,24 +1,19 @@
 ## Project workflow:
 
 - ### Setup
-    - 0, Create conda with python 3.11
-        ````
-        conda create -n mlops python=3.11.7
-        ````
+    - 0, Create conda with python 3.11 :
+        `conda create -n mlops python=3.11.7`
+        
     - 1, Install UV
-        ````
-        pip install uv
-        ````
+        `pip install uv`
+        
 
     - 2, Initialize UV with in the directory, which creates pyproject.toml, sample.py, with .python-version
-        ````
-        uv init
-        ````
+        `uv init`
+        
 
     - 3, Install hydra with pip
-        ````
-        pip install hydra-core --upgrade
-        ````
+        `pip install hydra-core --upgrade`
 
     - 4, Create configs directory with model configs, dataset configs and train.yaml
     - 5, Create .githubs/workflows with ci.yaml (for CI/CD pipeline)
@@ -28,14 +23,52 @@
         source my_env/bin/activate
         ````
     - 7, Install dependencies from pyprojects.toml file,
-        ````
-        uv pip install -r pyproject.toml
-        ````
+        `uv pip install -r pyproject.toml`
+
     - 8, For hyper parameter tuning using optuna, run train.py by passing params
         ````
          python src/train.py -m hparams=dogbreed_ex_vit_hparam ++trainer.log_every_n_steps=5
         ````
+# aws
 
+### CDK commands:
+
+`cdk configure`
+    - To configure IAM user with key and pass.
+
+`cdk bootstrap`
+    - To create template of resources at cloudformation with the role of configures user.
+
+`cdk deploy`
+    - CDK uses CloudFormation as its deployment engine, so the "cdk deploy" command essentially manages the process of generating and deploying a CloudFormation stack.
+
+## Other commands :
+
+- `aws configure list`
+    - Lists all the configuration like, key, pass and region.
+        access_key     ****************FL7M shared-credentials-file    
+        secret_key     ****************t2lE shared-credentials-file    
+            region               ap-south-1      config-file    ~/.aws/config
+
+- `pip install aws-cdk-lib==2.168.0`
+- `npm install -g aws-cdk`
+- Docker path
+    `export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"`
+
+- Docker build and run
+    - `docker build -t dog-classifier .`
+    - `docker run -p 8000:8000 dog-classifier`
+
+- Conda initialization for maxc
+    - `source /Users/anvesh/opt/anaconda3/bin/activate`
+
+
+<!-- aws-cdk.core
+aws-cdk.aws-lambda
+aws-cdk.aws-apigateway -->
+
+
+##########################################
 - ### Detailed TODO's :    
     - Create simple traning pipeline first, with hydra configurations. - Done
     - Integrate CI CD wirh github actions - Done

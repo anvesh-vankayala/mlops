@@ -1,0 +1,23 @@
+fastapi==0.115.5
+onnxruntime==1.20.1
+numpy==2.1.1
+pillow==10.4.0
+pydantic==2.9.2
+python-fasthtml==0.10.0
+shad4fast==1.3.1
+uvicorn>=0.30
+--extra-index-url <https://download.pytorch.org/whl/cpu>
+torch
+torchvision
+gradio==5.6.0
+# fastapi==0.95.2
+# onnxruntime
+# numpy==1.23.5
+# Pillow==9.3.0
+# shad4fast==0.1.0
+# fasthtml==0.1.0
+# uvicorn==0.22.0
+# fastapi
+# uvicorn
+# aws-cdk-lib==2.168.0
+ 
