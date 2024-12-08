@@ -6,7 +6,6 @@ import onnxruntime as ort
 from PIL import Image
 from fastapi import FastAPI, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from fastapi.responses import JSONResponse, HTMLResponse
 from fasthtml import FastHTML
 from fasthtml.common import (
@@ -40,8 +39,6 @@ from shad4fast import (
     Progress,
 )
 import base64
-import torch
-import torchvision.transforms as transforms
 from pathlib import Path
 
 # Create main FastAPI app
@@ -64,31 +61,27 @@ class DogBreedClassifier:
     def __init__(self):
         # Get absolute path to the model file
         project_root = Path(__file__).resolve().parents[0]  # Go up 2 levels to reach project root
-        model_path = project_root / "model_storage" / "model.onnx"
+        model_path = project_root / "model.onnx"
         
         if not model_path.exists():
             raise FileNotFoundError(
                 f"ONNX model not found at {model_path}. "
                 "Please run the onnx_converter.py first."
             )
-            
-        self.device = torch.device('cpu')
+        
         self.model = ort.InferenceSession(str(model_path))  # Convert Path to string
-
-        # Define the same transforms used during training/testing
-        self.transform = transforms.Compose([
-            transforms.Resize((224, 224)),
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=[0.485, 0.456, 0.406],
-                std=[0.229, 0.224, 0.225]
-            )
-        ])
 
         # Class labels based on dogbreed.yaml
         self.labels = ['Beagle', 'Boxer', 'Bulldog', 'Dachshund', 'German_Shepherd', 'Golden_Retriever', 'Labrador_Retriever', 'Poodle', 'Rottweiler', 'Yorkshire_Terrier']
 
-    @torch.no_grad()
+    def preprocess_image(self, image):
+        # Resize and normalize the image
+        image = image.resize((224, 224))
+        img_array = np.array(image).astype(np.float32) / 255.0  # Normalize to [0, 1]
+        img_array = img_array.transpose(2, 0, 1)  # Change to CHW format
+        img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+        return img_array
+
     def predict(self, image):
         if image is None:
             return None
@@ -98,11 +91,11 @@ class DogBreedClassifier:
             image = Image.fromarray(image).convert('RGB')
         
         # Preprocess image
-        img_tensor = self.transform(image).unsqueeze(0).numpy()  # Convert to numpy array for ONNX model
+        img_tensor = self.preprocess_image(image)  # Convert to numpy array for ONNX model
         
         # Get prediction
         output = self.model.run(None, {self.model.get_inputs()[0].name: img_tensor})
-        probabilities = torch.nn.functional.softmax(torch.tensor(output[0]), dim=1)
+        probabilities = np.exp(output[0]) / np.sum(np.exp(output[0]), axis=1, keepdims=True)
         
         # Create prediction dictionary
         return {
@@ -219,7 +212,7 @@ async def predict(file: Annotated[bytes, File(description="Image file to classif
                             P("Confidence Score", cls="font-medium"),
                             P(
                                 f"{confidence:.1%}",
-                                cls=f"text-xl font-bold",
+                                cls="text-xl font-bold",
                             ),
                             cls="flex justify-between items-baseline",
                         ),
@@ -240,7 +233,6 @@ async def predict(file: Annotated[bytes, File(description="Image file to classif
                                     P(
                                         f"{prob:.1%}",
                                         cls=f"font-medium {'text-muted-foreground' if label != predicted_class else ''}",
-                                        # cls=f"font-medium { "" if label == predicted_class else 'text-muted-foreground'}",
                                     ),
                                     cls="flex justify-between items-center",
                                 ),

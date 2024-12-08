@@ -1,5 +1,5 @@
-# FROM public.ecr.aws/docker/library/python:3.12-slim
-FROM public.ecr.aws/docker/library/python:3.11.10-slim
+FROM --platform=linux/amd64 public.ecr.aws/docker/library/python:3.12-slim
+# FROM public.ecr.aws/docker/library/python:3.11.10-slim
 
 
 
@@ -12,17 +12,23 @@ ENV PORT=8000
 # Set working directory
 WORKDIR /var/task
 
-RUN pip install setuptools 
+# RUN pip install setuptools 
 
 # Copy requirements first to leverage Docker cache
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+COPY requirements-infer.txt ./
+# RUN pip install --no-cache-dir -r requirements-infer.txt
+RUN pip install --no-cache-dir setuptools && \
+    pip install --no-cache-dir -r requirements-infer.txt
 
 # Copy application code and model
 # Start of Selection
-COPY . ./
-# End of Selection
+# COPY . ./
+# COPY app.py ./
+# COPY icons.py ./
+# COPY model_storage/model.onnx ./
+
+COPY app.py icons.py model_storage/model.onnx ./
+
 
 # COPY app.py ./
 # COPY icons.py ./

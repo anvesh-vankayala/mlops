@@ -39,6 +39,9 @@
 `cdk bootstrap`
     - To create template of resources at cloudformation with the role of configures user.
 
+`cdk diff`
+    - Its like git status, shows what function is deleted or added.
+
 `cdk deploy`
     - CDK uses CloudFormation as its deployment engine, so the "cdk deploy" command essentially manages the process of generating and deploying a CloudFormation stack.
 
@@ -54,10 +57,12 @@
 - `npm install -g aws-cdk`
 - Docker path
     `export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"`
-
+- Node path
+    `export PATH="/opt/homebrew/opt/node@18/bin:$PATH"`
 - Docker build and run
     - `docker build -t dog-classifier .`
     - `docker run -p 8000:8000 dog-classifier`
+    - `docker image inspect your-image-name`
 
 - Conda initialization for maxc
     - `source /Users/anvesh/opt/anaconda3/bin/activate`

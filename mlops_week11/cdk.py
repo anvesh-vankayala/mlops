@@ -8,11 +8,12 @@ from aws_cdk import (
     Duration,
     CfnOutput,
 )
+from aws_cdk.aws_ecr_assets import Platform
 from aws_cdk.aws_lambda import (
     DockerImageFunction,
     DockerImageCode,
     Architecture,
-    FunctionUrlAuthType,
+    FunctionUrlAuthType
 )
 
 my_environment = Environment(
@@ -20,20 +21,21 @@ my_environment = Environment(
 )
 
 
-class TestFastAPIStack(Stack):
+class TestFastAPIStackDogBreed(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         # Create Lambda function
         lambda_fn = DockerImageFunction(
             self,
-            "CatDogClassifierFastAPI",
+            "DogBreedClassifier",
             code=DockerImageCode.from_image_asset(
                 str(Path.cwd()),  # Uses the Dockerfile in the current directory
                 file="Dockerfile",
+                platform=Platform.LINUX_AMD64
             ),
             architecture=Architecture.X86_64,
-            memory_size=256,  # 8GB memory
+            memory_size=2048,  # 8GB memory
             timeout=Duration.minutes(5),
         )
 
@@ -50,5 +52,5 @@ class TestFastAPIStack(Stack):
 
 
 app = App()
-TestFastAPIStack(app, "TestFastAPIStack", env=my_environment)
+TestFastAPIStackDogBreed(app, "TestFastAPIStackDogBreed", env=my_environment)
 app.synth()
