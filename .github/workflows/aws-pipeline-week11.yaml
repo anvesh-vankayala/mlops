@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Set up Node
+        working-directory: mlops_week11
         uses: actions/setup-node@v4
         with:
           node-version: "18"
@@ -29,6 +30,7 @@ jobs:
           pip install -r requirements-infer.txt
           npm install -g aws-cdk
       - name: Configure AWS credentials
+        working-directory: mlops_week11
         uses: aws-actions/configure-aws-credentials@master
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
