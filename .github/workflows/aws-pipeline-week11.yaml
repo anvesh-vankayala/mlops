@@ -17,7 +17,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Set up Node
-        working-directory: mlops_week11
         uses: actions/setup-node@v4
         with:
           node-version: "18"
