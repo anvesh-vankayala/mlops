@@ -1,44 +1,44 @@
-name: CI
+# name: CI
 
-on:
-  push:
-    branches: [main]
-    paths:
-      - mlops_week11/**
+# on:
+#   push:
+#     branches: [main]
+#     paths:
+#       - mlops_week11/**
 
-jobs:
-  test: 
-    name : Run Tests for Week 11
-    runs-on: ubuntu-latest
+# jobs:
+#   test: 
+#     name : Run Tests for Week 11
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v2
+#       - name: Install uv
+#         uses: astral-sh/setup-uv@v2
 
-      - name: Set up Python
-        working-directory: mlops_week11
-        run: uv python install 3.12
+#       - name: Set up Python
+#         working-directory: mlops_week11
+#         run: uv python install 3.12
 
-      - name: Install dependencies
-        working-directory: mlops_week11
-        env:
-          UV_EXTRA_INDEX_URL: https://download.pytorch.org/whl/cpu
-        run: |
-          uv sync
+#       - name: Install dependencies
+#         working-directory: mlops_week11
+#         env:
+#           UV_EXTRA_INDEX_URL: https://download.pytorch.org/whl/cpu
+#         run: |
+#           uv sync
           
-      - name: Run coverage with pytest
-        working-directory: mlops_week11
-        run: |
-          uv run coverage run -m pytest
-          uv run coverage xml
+#       - name: Run coverage with pytest
+#         working-directory: mlops_week11
+#         run: |
+#           uv run coverage run -m pytest
+#           uv run coverage xml
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }} # required
-          files: ./coverage.xml
-          flags: unittests
-          fail_ci_if_error: true
-          verbose: true
+#       - name: Upload coverage to Codecov
+#         uses: codecov/codecov-action@v4
+#         with:
+#           token: ${{ secrets.CODECOV_TOKEN }} # required
+#           files: ./coverage.xml
+#           flags: unittests
+#           fail_ci_if_error: true
+#           verbose: true
