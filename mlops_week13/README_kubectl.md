@@ -29,4 +29,4 @@
 
 - `kubectl get service <service-name> -o yaml` : The command will fetch the configuration of the service named fastapi-svc from the Kubernetes cluster and display it in YAML format.
 
-- `kubectl delete -f <resources yaml>.yaml` : The command  is used to delete a Kubernetes resource (in this case, a Deployment) that is defined in the specified YAML.
+- `kubectl delete -f <resources yaml>.yaml` : The command  is used to delete a Kubernetes resource (in this case, a Deployment) that is defined in the specified YAML. 
