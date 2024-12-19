@@ -19,4 +19,14 @@
     - Container IDs: The IDs of the containers running inside the pod.
     - Labels: Labels attached to the Pod.
 
-- `kubectl get namespaces` : gets the name spaces
+- `kubectl describe pod <pod-name>` :  It gives all these info about the pod, namespace, Node with IP it belongs to, labels, IP of Pod, status, list of containers it have and their status, volume details etc.
+- `kubectl delete deployment <deployment-name>` : deletes the deployment. 
+- `kubectl get namespaces` : gets the name spaces.
+
+- `kubectl apply -f .` :  will look in the current directory for all files that match the pattern *.yaml or *.yml and apply them to the Kubernetes cluster. This is typically used when you want to apply multiple configuration files in one go (for example, if there are multiple Kubernetes resources like Deployments, Services, and ConfigMaps in the current directory).
+
+- `kubectl get deployment <deployment-name> -o yaml` : The command will fetch the configuration of the Deployment named fastapi-deployment from the Kubernetes cluster and display it in YAML format.
+
+- `kubectl get service <service-name> -o yaml` : The command will fetch the configuration of the service named fastapi-svc from the Kubernetes cluster and display it in YAML format.
+
+- `kubectl delete -f <resources yaml>.yaml` : The command  is used to delete a Kubernetes resource (in this case, a Deployment) that is defined in the specified YAML 
