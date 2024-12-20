@@ -8,11 +8,11 @@ spec: # specs for deployment
     replicas: 3
     selector:
         matchLabels:
-            app: fastapi
+            app: fastapia
     template:
         metadata:
             labels:
-                app: fastapi
+                app: fastapia
         spec: # specs for each pod
             containers:
                 - name: fastapi
@@ -28,7 +28,7 @@ metadata:
     name: fastapi-svc
 spec:
     selector:
-        app: fastapi
+        app: fastapia
     type: LoadBalancer
     ports:
         - protocol: TCP
