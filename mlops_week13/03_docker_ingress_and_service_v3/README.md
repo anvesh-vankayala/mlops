@@ -1,13 +1,14 @@
 ## Output of the project:
-`kubectl describe deployment.apps/classifer-deployment`
-`kubectl describe pod/classifer-deployment-5545798ff5-8zknf`
-`kubectl describe ingress classifier-ingress`
-`kubectl top pod`
-`kubectl top node`
-`kubectl get all -o yaml`
+- `kubectl describe deployment.apps/classifer-deployment`
+- `kubectl describe pod/classifer-deployment-5545798ff5-8zknf`
+- `kubectl describe ingress classifier-ingress`
+- `kubectl top pod`
+- `kubectl top node`
+- `kubectl get all -o yaml`
  
 ## Output of the project:
-`kubectl describe deployment.apps/classifer-deployment`
+
+- `kubectl describe deployment.apps/classifer-deployment`
 Name:                   classifer-deployment
 Namespace:              default
 CreationTimestamp:      Fri, 27 Dec 2024 20:25:00 +0530
@@ -42,7 +43,7 @@ Events:
   ----    ------             ----  ----                   -------
   Normal  ScalingReplicaSet  59m   deployment-controller  Scaled up replica set classifer-deployment-5545798ff5 to 2
 
-`kubectl describe pod/classifer-deployment-5545798ff5`
+- `kubectl describe pod/classifer-deployment-5545798ff5`
 Name:             classifer-deployment-5545798ff5-8zknf
 Namespace:        default
 Priority:         0
@@ -98,7 +99,7 @@ Events:
   Normal  Started    61m   kubelet            Started container classifier
 
 
-`kubectl describe ingress classifier-ingress`
+- `kubectl describe ingress classifier-ingress`
 Name:             classifier-ingress
 Labels:           <none>
 Namespace:        default
@@ -120,16 +121,16 @@ Events:
   ----    ------  ----               ----                      -------
   Normal  Sync    66m (x2 over 67m)  nginx-ingress-controller  Scheduled for sync
 
-`kubectl top pod`
+- `kubectl top pod`
 NAME                                    CPU(cores)   MEMORY(bytes)   
 classifer-deployment-5545798ff5-8zknf   13m          1079Mi          
 classifer-deployment-5545798ff5-scfbf   13m          1026Mi          
 
-`kubectl top node`
+- `kubectl top node`
 NAME       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
 minikube   147m         1%       2778Mi          35%   
 
-`kubectl get all -o yaml`
+- `kubectl get all -o yaml`
 
 apiVersion: v1
 items:
