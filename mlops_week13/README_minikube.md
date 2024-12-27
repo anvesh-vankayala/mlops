@@ -15,3 +15,5 @@
 - `eval $(minikube docker-env)` : to switch to minikube's docker env.
 - `minikube tunnel` : Minikube tunnel is a command that creates a network tunnel to your Minikube cluster, allowing you to access services that are exposed via LoadBalancer type services. When you run minikube tunnel, it sets up a local network route to the Minikube cluster, enabling you to access these services using their assigned external IP addresses.
 - `minikube image load classifier-k8s:latest` : To load the image to minikube.
+- `ps aux | grep "minikube tunnel"` : To check if the minikube tunnel is running.
+- `sudo pkill -f "minikube tunnel"` : To kill all the minikube tunnel.
