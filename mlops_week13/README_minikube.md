@@ -11,3 +11,5 @@
 - `minikube stop` : Stops the running Minikube cluster.
 - `minikube status` : Checks the status of the Minikube cluster.
 - `minikube dashboard` : Opens the Kubernetes dashboard in your web browser (if it's installed).
+- `eval $(minikube docker-env -u)` : To switch to docker demon env.
+- `eval $(minikube docker-env)` : to switch to minikube's docker env.

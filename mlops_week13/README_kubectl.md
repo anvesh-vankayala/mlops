@@ -1,7 +1,7 @@
 ## kubectl :
 - It is a command line interface to access the cluster.
 - `alias kubectl="minikube kubectl --"` :kubectl on minikube is run with `minikube kubectl --` but we can create an alias to just use kubectl
-- `kubectl get all` : lists all the parts of a Kubernetes cluster, including services, deployments, replica sets, and stateful sets
+- `kubectl get all` : lists all the parts of a Kubernetes cluster, including services, deployments, replica sets, and stateful sets, with in the default namespace.
 - `kubectl get all -n kube-system` : will list everything inside the kube-system namespace.
 - `kubectl cluster-info` is a Kubernetes command used to display the addresses of the control plane and services within your cluster.
 
@@ -20,7 +20,11 @@
     - Labels: Labels attached to the Pod.
 
 - `kubectl describe pod <pod-name>` :  It gives all these info about the pod, namespace, Node with IP it belongs to, labels, IP of Pod, status, list of containers it have and their status, volume details etc.
+
 - `kubectl delete deployment <deployment-name>` : deletes the deployment. 
+
+- `kubectl delete -n <namespace> service <service-name>` : deletes the service, at the given namespace.
+
 - `kubectl get namespaces` : gets the name spaces.
 
 - `kubectl apply -f .` :  will look in the current directory for all files that match the pattern *.yaml or *.yml and apply them to the Kubernetes cluster. This is typically used when you want to apply multiple configuration files in one go (for example, if there are multiple Kubernetes resources like Deployments, Services, and ConfigMaps in the current directory).
@@ -30,3 +34,8 @@
 - `kubectl get service <service-name> -o yaml` : The command will fetch the configuration of the service named fastapi-svc from the Kubernetes cluster and display it in YAML format.
 
 - `kubectl delete -f <resources yaml>.yaml` : The command  is used to delete a Kubernetes resource (in this case, a Deployment) that is defined in the specified YAML. 
+
+- `minikube service fastapi-svc` : To start the service.
+
+### To activate conda package:
+`source /Users/anvesh/opt/anaconda3/bin/activate`

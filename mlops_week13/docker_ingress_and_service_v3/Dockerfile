@@ -6,8 +6,7 @@ WORKDIR /opt/src
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt \\
-	&& rm -rf /root/.cache/pip
+RUN pip install -r requirements.txt && rm -rf /root/.cache/pip
 
 COPY . .
 
