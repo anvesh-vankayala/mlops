@@ -11,6 +11,7 @@
 - `kubectl create deployment fastapi --image=tiangolo/uvicorn-gunicorn-fastapi:python3.11-2024-12-09` : For example Here, `fastapi` is the deployment name and image is `tiangolo/uvicorn-gunicorn-fastapi:python3.11-slim-2024-12-09`
 
 - `kubectl get deployment`: To get deployments.
+- `kubectl get ingress` : To get ingress.
 - `kubectl get pods` : gets the pods
 - `kubectl get pods -o wide` :
     -o wide: The -o flag specifies the output format. By using wide, you get a more detailed view of the Pods, including additional columns like:
