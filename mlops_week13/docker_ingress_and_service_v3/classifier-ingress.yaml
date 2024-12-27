@@ -10,7 +10,7 @@ metadata:
         nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
 spec:
     rules:
-        - host: classifier.localhost
+        - host: anvesh.vankayala
           http:
               paths:
                   - path: /

@@ -29,11 +29,13 @@
 
 - `kubectl apply -f .` :  will look in the current directory for all files that match the pattern *.yaml or *.yml and apply them to the Kubernetes cluster. This is typically used when you want to apply multiple configuration files in one go (for example, if there are multiple Kubernetes resources like Deployments, Services, and ConfigMaps in the current directory).
 
+- `minikube tunnel` : to tunnel the service to the local machine.
+
 - `kubectl get deployment <deployment-name> -o yaml` : The command will fetch the configuration of the Deployment named fastapi-deployment from the Kubernetes cluster and display it in YAML format.
 
 - `kubectl get service <service-name> -o yaml` : The command will fetch the configuration of the service named fastapi-svc from the Kubernetes cluster and display it in YAML format.
 
-- `kubectl delete -f <resources yaml>.yaml` : The command  is used to delete a Kubernetes resource (in this case, a Deployment) that is defined in the specified YAML. 
+- `kubectl delete -f <resources yaml>.yaml` : The command  is used to delete a Kubernetes resource (in this case, a Deployment) that is defined in the specified YAML. `kubectl delete -f .` : will delete all the resources in the current directory.
 
 - `minikube service fastapi-svc` : To start the service.
 

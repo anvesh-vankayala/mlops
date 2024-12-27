@@ -19,8 +19,8 @@ class ImageClassifier:
         # Load ImageNet labels
         import requests
 
-        url = "<https://storage.googleapis.com/bit_models/ilsvrc2012_wordnet_lemmas.txt>"
-        self.labels = requests.get(url).text.strip().split("\\n")
+        with open("ilsvrc2012_wordnet_lemmas.txt", "r") as f:
+            self.labels = f.read().strip().split("\n")
 
     @torch.no_grad()
     def predict(self, image):
@@ -59,4 +59,4 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0")
+    demo.launch(server_name="0.0.0.0",share=True)
